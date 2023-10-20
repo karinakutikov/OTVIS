@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:id="@+id/fragment_map_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/fragment_logs_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/navigation_bar"/>
+    <FrameLayout
+        android:id="@+id/fragment_database_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/navigation_bar"/>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+
+
+    <TextView
+        android:id="@+id/memory_usage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/round_back_secondary_100"
+        android:padding="10dp"
+        android:shadowRadius="30"
+        android:text="memory: NA"
+        android:textColor="@color/RED"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/remaining_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/round_back_secondary_100"
+        android:padding="10dp"
+        android:shadowRadius="30"
+        android:text="Time: NA"
+        android:textColor="@color/RED"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:visibility="gone"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:padding="10dp">
+        <ImageView
+            android:id="@+id/gps_light"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+            android:src="@drawable/gps_off" />
+        <TextView
+            android:id="@+id/hdop_value"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:text="NA"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:layout_centerInParent="true"
+            />
+
+    </RelativeLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp">
+
+
+<!--        <Button-->
+<!--            android:id="@+id/menu_btn"-->
+<!--            android:layout_width="125dp"-->
+<!--            android:layout_height="100dp"-->
+<!--            android:background="#00000000"-->
+<!--            android:textColor="#00000000"-->
+<!--            android:drawableTop="@drawable/menu_icon"-->
+<!--            android:visibility="visible"/>-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:orientation="vertical"
+            android:id="@+id/start_part">
+            <Button
+                android:id="@+id/start_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:textColor="@color/black"
+                android:textSize="0dp"
+                android:text="Start"
+                android:layout_marginEnd="0dp"
+                android:drawableTop="@drawable/start_icon"/>
+
+            <Button
+                android:id="@+id/logs_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:drawableRight="@drawable/logs_icon"
+                android:textColor="#00000000" />
+            <Button
+                android:id="@+id/delete_btn"
+                style="@style/Widget.Material3.CircularProgressIndicator.ExtraSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:drawableRight="@drawable/delete_icon" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        app:menu="@menu/bottom_navigation_menu"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/navigation_bar"
+        android:background="@color/white"/>
+
+
+
+
+
+
+
+
+</RelativeLayout>
