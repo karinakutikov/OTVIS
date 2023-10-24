@@ -99,7 +99,7 @@
 53-->C:\Users\KarinaKutikov\Documents\Dev\OTVIS\Java\app\src\main\AndroidManifest.xml:32:9-34:71
 54            android:name="com.google.android.geo.API_KEY"
 54-->C:\Users\KarinaKutikov\Documents\Dev\OTVIS\Java\app\src\main\AndroidManifest.xml:33:13-58
-55            android:value="AIzaSyBXrZGbAR7Z8OKmthZsOBDgfZ8UYCv4ooQ" />
+55            android:value="AIzaSyAqCrKVkhoahEjccS84kvjXfnZMcjdX5uQ" />
 55-->C:\Users\KarinaKutikov\Documents\Dev\OTVIS\Java\app\src\main\AndroidManifest.xml:34:13-68
 56
 57        <activity

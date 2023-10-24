@@ -1,258 +1,262 @@
 [
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/drawable_gps_searching.png.flat",
-        "source": "com.example.myapplication.app-main-73:/drawable/gps_searching.png"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\drawable-v24\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/drawable_gps_on.png.flat",
-        "source": "com.example.myapplication.app-main-73:/drawable/gps_on.png"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\drawable_radio_normal.xml.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\drawable\\radio_normal.xml"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/drawable_gps_off.png.flat",
-        "source": "com.example.myapplication.app-main-73:/drawable/gps_off.png"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\drawable_logout_btn.png.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\drawable\\logout_btn.png"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/drawable_profile_icon.png.flat",
-        "source": "com.example.myapplication.app-main-73:/drawable/profile_icon.png"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\menu_bottom_navigation_menu.xml.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\menu\\bottom_navigation_menu.xml"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/drawable_console_border_database.xml.flat",
-        "source": "com.example.myapplication.app-main-73:/drawable/console_border_database.xml"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\drawable_profile_icon.png.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\drawable\\profile_icon.png"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/drawable_waiting_time_icon.png.flat",
-        "source": "com.example.myapplication.app-main-73:/drawable/waiting_time_icon.png"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\layout_fragment_logs.xml.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\layout\\fragment_logs.xml"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.example.myapplication.app-main-73:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\drawable_gps_on.png.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\drawable\\gps_on.png"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/drawable-v24_ic_launcher_foreground.xml.flat",
-        "source": "com.example.myapplication.app-main-73:/drawable-v24/ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\layout_fragment_database.xml.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\layout\\fragment_database.xml"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/xml_backup_rules.xml.flat",
-        "source": "com.example.myapplication.app-main-73:/xml/backup_rules.xml"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/drawable_radio_selector.xml.flat",
-        "source": "com.example.myapplication.app-main-73:/drawable/radio_selector.xml"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\xml_root_preferences.xml.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\xml\\root_preferences.xml"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/layout_recycler_row.xml.flat",
-        "source": "com.example.myapplication.app-main-73:/layout/recycler_row.xml"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/drawable_camera_direction_icon.png.flat",
-        "source": "com.example.myapplication.app-main-73:/drawable/camera_direction_icon.png"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\drawable_current_loc_icon.png.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\drawable\\current_loc_icon.png"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/drawable_stop_icon.png.flat",
-        "source": "com.example.myapplication.app-main-73:/drawable/stop_icon.png"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\drawable_console_border_logs.xml.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\drawable\\console_border_logs.xml"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/drawable_back_btn.xml.flat",
-        "source": "com.example.myapplication.app-main-73:/drawable/back_btn.xml"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\drawable_start_icon.png.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\drawable\\start_icon.png"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/drawable_baseline_settings_24.xml.flat",
-        "source": "com.example.myapplication.app-main-73:/drawable/baseline_settings_24.xml"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/drawable_console_border_logs.xml.flat",
-        "source": "com.example.myapplication.app-main-73:/drawable/console_border_logs.xml"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/mipmap-hdpi_test_img.png.flat",
-        "source": "com.example.myapplication.app-main-73:/mipmap-hdpi/test_img.png"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\drawable_gps_searching.png.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\drawable\\gps_searching.png"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/drawable_radio_normal.xml.flat",
-        "source": "com.example.myapplication.app-main-73:/drawable/radio_normal.xml"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\mipmap-xxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/drawable_round_back_white10_20.xml.flat",
-        "source": "com.example.myapplication.app-main-73:/drawable/round_back_white10_20.xml"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\drawable_back_btn.xml.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\drawable\\back_btn.xml"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "com.example.myapplication.app-main-73:/mipmap-hdpi/ic_launcher_round.png"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\layout_activity_settings.xml.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\layout\\activity_settings.xml"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/drawable_delete_icon.png.flat",
-        "source": "com.example.myapplication.app-main-73:/drawable/delete_icon.png"
+        "merged": "com.example.myapplication.app-merged_res-71:/layout_fragment_about.xml.flat",
+        "source": "com.example.myapplication.app-main-73:/layout/fragment_about.xml"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/drawable_logs_icon.png.flat",
-        "source": "com.example.myapplication.app-main-73:/drawable/logs_icon.png"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\mipmap-mdpi\\ic_launcher.png"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/mipmap-hdpi_init_map.PNG.flat",
-        "source": "com.example.myapplication.app-main-73:/mipmap-hdpi/init_map.PNG"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\drawable_camera_icon.png.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\drawable\\camera_icon.png"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
-        "source": "com.example.myapplication.app-main-73:/mipmap-xxxhdpi/ic_launcher_foreground.png"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\drawable_baseline_table_chart_24.xml.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\drawable\\baseline_table_chart_24.xml"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/drawable_max_dist_icon.png.flat",
-        "source": "com.example.myapplication.app-main-73:/drawable/max_dist_icon.png"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "com.example.myapplication.app-main-73:/mipmap-hdpi/ic_launcher.png"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\drawable_snow_height_icon.png.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\drawable\\snow_height_icon.png"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.example.myapplication.app-main-73:/drawable/ic_launcher_background.xml"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\drawable_radio_selector.xml.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\drawable\\radio_selector.xml"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "com.example.myapplication.app-main-73:/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\layout\\activity_main.xml"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/drawable_round_back_secondary_100.xml.flat",
-        "source": "com.example.myapplication.app-main-73:/drawable/round_back_secondary_100.xml"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\xml\\data_extraction_rules.xml"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/drawable_settings_icon.png.flat",
-        "source": "com.example.myapplication.app-main-73:/drawable/settings_icon.png"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\mipmap-xhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/drawable_baseline_home_24.xml.flat",
-        "source": "com.example.myapplication.app-main-73:/drawable/baseline_home_24.xml"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\drawable_round_back_notification.xml.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\drawable\\round_back_notification.xml"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/drawable_baseline_table_chart_24.xml.flat",
-        "source": "com.example.myapplication.app-main-73:/drawable/baseline_table_chart_24.xml"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\drawable_walking_dist_icon.png.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\drawable\\walking_dist_icon.png"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/drawable_start_icon.png.flat",
-        "source": "com.example.myapplication.app-main-73:/drawable/start_icon.png"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\mipmap-hdpi_init_map.PNG.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\mipmap-hdpi\\init_map.PNG"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/layout_fragment_database.xml.flat",
-        "source": "com.example.myapplication.app-main-73:/layout/fragment_database.xml"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\drawable_settings_icon.png.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\drawable\\settings_icon.png"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/layout_activity_main.xml.flat",
-        "source": "com.example.myapplication.app-main-73:/layout/activity_main.xml"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/xml_root_preferences.xml.flat",
-        "source": "com.example.myapplication.app-main-73:/xml/root_preferences.xml"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\drawable_stop_icon.png.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\drawable\\stop_icon.png"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "com.example.myapplication.app-main-73:/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\drawable_max_dist_icon.png.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\drawable\\max_dist_icon.png"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/mipmap-xhdpi_ic_launcher_foreground.png.flat",
-        "source": "com.example.myapplication.app-main-73:/mipmap-xhdpi/ic_launcher_foreground.png"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\mipmap-hdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/drawable_current_loc_icon.png.flat",
-        "source": "com.example.myapplication.app-main-73:/drawable/current_loc_icon.png"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\drawable_location_icon.png.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\drawable\\location_icon.png"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/drawable_pause_thresh_icon.png.flat",
-        "source": "com.example.myapplication.app-main-73:/drawable/pause_thresh_icon.png"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\mipmap-mdpi\\ic_launcher_foreground.png"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "com.example.myapplication.app-main-73:/mipmap-mdpi/ic_launcher_round.png"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\drawable_camera_fps_icon.png.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\drawable\\camera_fps_icon.png"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/xml_data_extraction_rules.xml.flat",
-        "source": "com.example.myapplication.app-main-73:/xml/data_extraction_rules.xml"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\xml\\backup_rules.xml"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/mipmap-mdpi_ic_launcher_foreground.png.flat",
-        "source": "com.example.myapplication.app-main-73:/mipmap-mdpi/ic_launcher_foreground.png"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\mipmap-hdpi\\ic_launcher.png"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.example.myapplication.app-main-73:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\mipmap-xxhdpi\\ic_launcher_foreground.png"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/drawable_round_back_notification.xml.flat",
-        "source": "com.example.myapplication.app-main-73:/drawable/round_back_notification.xml"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/drawable_camera_icon.png.flat",
-        "source": "com.example.myapplication.app-main-73:/drawable/camera_icon.png"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\drawable_camera_direction_icon.png.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\drawable\\camera_direction_icon.png"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "com.example.myapplication.app-main-73:/mipmap-mdpi/ic_launcher.png"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/drawable_walking_dist_icon.png.flat",
-        "source": "com.example.myapplication.app-main-73:/drawable/walking_dist_icon.png"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\drawable_baseline_settings_24.xml.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\drawable\\baseline_settings_24.xml"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/layout_fragment_logs.xml.flat",
-        "source": "com.example.myapplication.app-main-73:/layout/fragment_logs.xml"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\drawable_baseline_home_24.xml.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\drawable\\baseline_home_24.xml"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "com.example.myapplication.app-main-73:/mipmap-xxxhdpi/ic_launcher_round.png"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\drawable_round_back_secondary_100.xml.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\drawable\\round_back_secondary_100.xml"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/drawable_camera_fps_icon.png.flat",
-        "source": "com.example.myapplication.app-main-73:/drawable/camera_fps_icon.png"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\drawable_logs_icon.png.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\drawable\\logs_icon.png"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
-        "source": "com.example.myapplication.app-main-73:/mipmap-xxhdpi/ic_launcher_foreground.png"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\drawable_threshold_icon.png.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\drawable\\threshold_icon.png"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "com.example.myapplication.app-main-73:/mipmap-xxhdpi/ic_launcher_round.png"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\drawable_round_back_white10_20.xml.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\drawable\\round_back_white10_20.xml"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/drawable_gps_good.png.flat",
-        "source": "com.example.myapplication.app-main-73:/drawable/gps_good.png"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\mipmap-hdpi_test_img.png.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\mipmap-hdpi\\test_img.png"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/layout_fragment_map.xml.flat",
-        "source": "com.example.myapplication.app-main-73:/layout/fragment_map.xml"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\mipmap-hdpi\\ic_launcher_foreground.png"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/drawable_location_icon.png.flat",
-        "source": "com.example.myapplication.app-main-73:/drawable/location_icon.png"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\layout_recycler_row.xml.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\layout\\recycler_row.xml"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/drawable_logout_btn.png.flat",
-        "source": "com.example.myapplication.app-main-73:/drawable/logout_btn.png"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\drawable_waiting_time_icon.png.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\drawable\\waiting_time_icon.png"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/drawable_threshold_icon.png.flat",
-        "source": "com.example.myapplication.app-main-73:/drawable/threshold_icon.png"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "com.example.myapplication.app-main-73:/mipmap-xhdpi/ic_launcher_round.png"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\drawable_pause_thresh_icon.png.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\drawable\\pause_thresh_icon.png"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/mipmap-hdpi_ic_launcher_foreground.png.flat",
-        "source": "com.example.myapplication.app-main-73:/mipmap-hdpi/ic_launcher_foreground.png"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\drawable_delete_icon.png.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\drawable\\delete_icon.png"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/layout_activity_settings.xml.flat",
-        "source": "com.example.myapplication.app-main-73:/layout/activity_settings.xml"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\drawable_gps_off.png.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\drawable\\gps_off.png"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/drawable_snow_height_icon.png.flat",
-        "source": "com.example.myapplication.app-main-73:/drawable/snow_height_icon.png"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\mipmap-xhdpi\\ic_launcher_foreground.png"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/menu_bottom_navigation_menu.xml.flat",
-        "source": "com.example.myapplication.app-main-73:/menu/bottom_navigation_menu.xml"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\drawable_console_border_database.xml.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\drawable\\console_border_database.xml"
     },
     {
-        "merged": "com.example.myapplication.app-merged_res-71:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "com.example.myapplication.app-main-73:/mipmap-xhdpi/ic_launcher.png"
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\drawable_gps_good.png.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\drawable\\gps_good.png"
+    },
+    {
+        "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\layout_fragment_map.xml.flat",
+        "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\layout\\fragment_map.xml"
     }
 ]

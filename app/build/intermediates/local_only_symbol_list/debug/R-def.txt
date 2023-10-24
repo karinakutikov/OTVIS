@@ -57,6 +57,7 @@ drawable threshold_icon
 drawable waiting_time_icon
 drawable walking_dist_icon
 id Snow_height
+id about_img
 id addNewUserButton
 id back_to_home_btn
 id cache_map_btn
@@ -121,6 +122,7 @@ id walking_distance
 id walking_distance_img
 layout activity_main
 layout activity_settings
+layout fragment_about
 layout fragment_database
 layout fragment_logs
 layout fragment_map

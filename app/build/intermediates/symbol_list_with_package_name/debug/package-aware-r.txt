@@ -3215,6 +3215,7 @@ id SYM
 id Snow_height
 id TOP_END
 id TOP_START
+id about_img
 id accelerate
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
@@ -3920,6 +3921,7 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout expand_button
+layout fragment_about
 layout fragment_database
 layout fragment_logs
 layout fragment_map
