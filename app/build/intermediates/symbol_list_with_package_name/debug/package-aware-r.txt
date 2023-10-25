@@ -3215,6 +3215,7 @@ id SYM
 id Snow_height
 id TOP_END
 id TOP_START
+id about_btn
 id about_img
 id accelerate
 id accessibility_action_clickable_span

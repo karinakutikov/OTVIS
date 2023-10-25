@@ -1,4 +1,4 @@
-#Tue Oct 24 09:53:58 EDT 2023
+#Wed Oct 25 10:14:35 EDT 2023
 base.0=C\:\\Users\\KarinaKutikov\\Documents\\Dev\\OTVIS\\Java\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=C\:\\Users\\KarinaKutikov\\Documents\\Dev\\OTVIS\\Java\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.2=C\:\\Users\\KarinaKutikov\\Documents\\Dev\\OTVIS\\Java\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\2\\classes.dex

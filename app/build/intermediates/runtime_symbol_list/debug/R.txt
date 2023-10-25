@@ -3214,6 +3214,7 @@ int id SYM 0x7f09000b
 int id Snow_height 0x7f09000c
 int id TOP_END 0x7f09000d
 int id TOP_START 0x7f09000e
+int id about_btn 0x7f09024b
 int id about_img 0x7f09024a
 int id accelerate 0x7f09000f
 int id accessibility_action_clickable_span 0x7f090010

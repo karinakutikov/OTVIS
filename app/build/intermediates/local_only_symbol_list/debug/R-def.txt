@@ -57,6 +57,7 @@ drawable threshold_icon
 drawable waiting_time_icon
 drawable walking_dist_icon
 id Snow_height
+id about_btn
 id about_img
 id addNewUserButton
 id back_to_home_btn

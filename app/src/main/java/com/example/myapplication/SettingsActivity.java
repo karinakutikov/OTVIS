@@ -145,18 +145,6 @@ public class SettingsActivity extends AppCompatActivity {
                 }
             }
 
-            // Handle the about button
-            Button aboutBtn = findViewById(R.id.about_btn);
-            aboutBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (BlankFragment.sysLogsBox.getVisibility() == View.GONE) {
-                        BlankFragment.sysLogsBox.setVisibility(View.VISIBLE);
-                    } else {
-                        BlankFragment.sysLogsBox.setVisibility(View.GONE);
-                    }
-                }
-            });
 
 
             @Override
