@@ -3215,8 +3215,11 @@ id SYM
 id Snow_height
 id TOP_END
 id TOP_START
+id about
+id about_box
 id about_btn
 id about_img
+id about_title
 id accelerate
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
@@ -3621,6 +3624,7 @@ id scroll
 id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
+id scroll_view_about
 id scroll_view_sys
 id scrollable
 id search_badge

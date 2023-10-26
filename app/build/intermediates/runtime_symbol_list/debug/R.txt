@@ -3214,8 +3214,11 @@ int id SYM 0x7f09000b
 int id Snow_height 0x7f09000c
 int id TOP_END 0x7f09000d
 int id TOP_START 0x7f09000e
+int id about 0x7f09024c
+int id about_box 0x7f09024d
 int id about_btn 0x7f09024b
 int id about_img 0x7f09024a
+int id about_title 0x7f09024e
 int id accelerate 0x7f09000f
 int id accessibility_action_clickable_span 0x7f090010
 int id accessibility_custom_action_0 0x7f090011
@@ -3620,6 +3623,7 @@ int id scroll 0x7f09019f
 int id scrollIndicatorDown 0x7f0901a0
 int id scrollIndicatorUp 0x7f0901a1
 int id scrollView 0x7f0901a2
+int id scroll_view_about 0x7f09024f
 int id scroll_view_sys 0x7f0901a3
 int id scrollable 0x7f0901a4
 int id search_badge 0x7f0901a5

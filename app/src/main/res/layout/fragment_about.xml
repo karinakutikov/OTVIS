@@ -26,7 +26,7 @@
             app:layout_constraintWidth_percent="0.8" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/sys_logs_box"
+            android:id="@+id/about_box"
             android:layout_width="375dp"
             android:layout_height="385dp"
             android:layout_gravity="bottom"
@@ -40,7 +40,7 @@
             app:layout_constraintWidth_percent="0.8">
 
             <TextView
-                android:id="@+id/logs_title"
+                android:id="@+id/about_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
@@ -49,22 +49,22 @@
                 android:textColor="@color/purple_200"
                 android:textSize="26sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@id/scroll_view_sys"
+                app:layout_constraintBottom_toTopOf="@id/scroll_view_about"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <ScrollView
-                android:id="@+id/scroll_view_sys"
+                android:id="@+id/scroll_view_about"
                 android:layout_width="match_parent"
                 android:layout_height="230dp"
                 android:visibility="visible"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/logs_title">
+                app:layout_constraintTop_toBottomOf="@+id/about_title">
 
                 <TextView
-                    android:id="@+id/sys_logs"
+                    android:id="@+id/about"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:minHeight="100dp"

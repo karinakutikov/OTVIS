@@ -57,8 +57,11 @@ drawable threshold_icon
 drawable waiting_time_icon
 drawable walking_dist_icon
 id Snow_height
+id about
+id about_box
 id about_btn
 id about_img
+id about_title
 id addNewUserButton
 id back_to_home_btn
 id cache_map_btn
@@ -97,6 +100,7 @@ id pause_threshold_img
 id radio_btn_headings
 id recyclerView
 id remaining_time
+id scroll_view_about
 id scroll_view_sys
 id set_default_button
 id setting

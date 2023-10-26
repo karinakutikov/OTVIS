@@ -18,6 +18,7 @@ public class SettingsActivity extends AppCompatActivity {
     private SharedPreferences sharedPref;
     private SharedPreferences.Editor editor;
     private JSONObject configValues = new JSONObject();
+    private BlankFragment BlankFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -145,6 +146,21 @@ public class SettingsActivity extends AppCompatActivity {
                 }
             }
 
+
+            private void setupClickListeners() {
+                // Handle the about button
+                Button aboutBtn = findViewById(R.id.about_btn);
+                aboutBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (BlankFragment.aboutBox.getVisibility() == View.GONE) {
+                            BlankFragment.aboutBox.setVisibility(View.VISIBLE);
+                        } else {
+                            BlankFragment.aboutBox.setVisibility(View.GONE);
+                        }
+                    }
+                });
+            }
 
 
             @Override
