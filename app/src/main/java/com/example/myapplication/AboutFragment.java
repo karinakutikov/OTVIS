@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-public class BlankFragment extends Fragment {
+public class AboutFragment extends Fragment {
     protected ScrollView aboutScrollView;
     protected ConstraintLayout aboutBox;
     protected TextView about;
@@ -26,7 +26,7 @@ public class BlankFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public BlankFragment() {
+    public AboutFragment() {
         // Required empty public constructor
     }
 
@@ -45,8 +45,8 @@ public class BlankFragment extends Fragment {
         // Inflate the layout for this fragment
         return view;
     }
-    public static BlankFragment newInstance(String param1, String param2) {
-        BlankFragment fragment = new BlankFragment();
+    public static AboutFragment newInstance(String param1, String param2) {
+        AboutFragment fragment = new AboutFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

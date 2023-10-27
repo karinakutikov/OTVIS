@@ -18,7 +18,7 @@ public class SettingsActivity extends AppCompatActivity {
     private SharedPreferences sharedPref;
     private SharedPreferences.Editor editor;
     private JSONObject configValues = new JSONObject();
-    private BlankFragment BlankFragment;
+    private AboutFragment AboutFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,10 +57,10 @@ public class SettingsActivity extends AppCompatActivity {
         aboutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (BlankFragment.aboutBox.getVisibility() == View.GONE) {
-                    BlankFragment.aboutBox.setVisibility(View.VISIBLE);
+                if (AboutFragment.aboutBox.getVisibility() == View.GONE) {
+                    AboutFragment.aboutBox.setVisibility(View.VISIBLE);
                 } else {
-                    BlankFragment.aboutBox.setVisibility(View.GONE);
+                    AboutFragment.aboutBox.setVisibility(View.GONE);
                 }
             }
         });
