@@ -45,8 +45,25 @@ public class SettingsActivity extends AppCompatActivity {
         sharedPref = getSharedPreferences("mySettings", MODE_PRIVATE);
         editor = sharedPref.edit();
 
+        setupClickListener();
+
         loadConfig();
         Log.d("configurationDefault", configValues.toString());
+    }
+
+    private void setupClickListener() {
+        // Handle the about button
+        Button aboutBtn = findViewById(R.id.about_btn);
+        aboutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (BlankFragment.aboutBox.getVisibility() == View.GONE) {
+                    BlankFragment.aboutBox.setVisibility(View.VISIBLE);
+                } else {
+                    BlankFragment.aboutBox.setVisibility(View.GONE);
+                }
+            }
+        });
     }
 
 
@@ -145,23 +162,6 @@ public class SettingsActivity extends AppCompatActivity {
                     }
                 }
             }
-
-
-            private void setupClickListeners() {
-                // Handle the about button
-                Button aboutBtn = findViewById(R.id.about_btn);
-                aboutBtn.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        if (BlankFragment.aboutBox.getVisibility() == View.GONE) {
-                            BlankFragment.aboutBox.setVisibility(View.VISIBLE);
-                        } else {
-                            BlankFragment.aboutBox.setVisibility(View.GONE);
-                        }
-                    }
-                });
-            }
-
 
             @Override
             public void afterTextChanged(Editable editable) {
