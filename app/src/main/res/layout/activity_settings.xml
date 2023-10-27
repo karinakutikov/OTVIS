@@ -445,40 +445,6 @@
                     android:digits="0123456789-"/>
             </RelativeLayout>
 
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="0dp"
-            android:layout_margin="5dp"
-            android:background="@color/colorGreen">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="5dp"
-                android:background="@drawable/round_back_white10_20">
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/baseline_settings_24"
-                    android:padding="10dp"
-                    android:layout_centerHorizontal="true"
-                    android:id="@+id/about_img"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="0dp"
-                    android:text="About"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:layout_below="@+id/about_img"
-                    android:layout_centerHorizontal="true"/>
-
-            </RelativeLayout>
 
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
@@ -505,6 +471,14 @@
                     android:background="#00000000"
                     android:drawableEnd="@drawable/settings_icon"
                     android:textColor="#00000000" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:text="About"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_centerHorizontal="true"/>
 
             </RelativeLayout>
 

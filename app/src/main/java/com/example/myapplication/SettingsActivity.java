@@ -59,7 +59,8 @@ public class SettingsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (AboutFragment.aboutBox.getVisibility() == View.GONE) {
                     AboutFragment.aboutBox.setVisibility(View.VISIBLE);
-                } else {
+                }
+                else {
                     AboutFragment.aboutBox.setVisibility(View.GONE);
                 }
             }
