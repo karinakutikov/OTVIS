@@ -482,9 +482,6 @@
 
             </RelativeLayout>
 
-
-
-
         </androidx.cardview.widget.CardView>
     </GridLayout>
 

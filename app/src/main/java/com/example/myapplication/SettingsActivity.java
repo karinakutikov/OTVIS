@@ -18,7 +18,7 @@ public class SettingsActivity extends AppCompatActivity {
     private SharedPreferences sharedPref;
     private SharedPreferences.Editor editor;
     private JSONObject configValues = new JSONObject();
-    private AboutFragment AboutFragment;
+    private AboutFragment aboutFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +45,7 @@ public class SettingsActivity extends AppCompatActivity {
         sharedPref = getSharedPreferences("mySettings", MODE_PRIVATE);
         editor = sharedPref.edit();
 
+        initializeFragments(savedInstanceState);
         setupClickListener();
 
         loadConfig();
@@ -57,16 +58,20 @@ public class SettingsActivity extends AppCompatActivity {
         aboutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (AboutFragment.aboutBox.getVisibility() == View.GONE) {
-                    AboutFragment.aboutBox.setVisibility(View.VISIBLE);
+                if (aboutFragment.aboutBox.getVisibility() == View.GONE) {
+                    aboutFragment.aboutBox.setVisibility(View.VISIBLE);
                 }
                 else {
-                    AboutFragment.aboutBox.setVisibility(View.GONE);
+                    aboutFragment.aboutBox.setVisibility(View.GONE);
                 }
             }
         });
     }
 
+    // Initialize fragments in the layout
+    private void initializeFragments(Bundle savedInstanceState) {
+        aboutFragment = new AboutFragment();
+    }
 
     private void loadValueToEditText(EditText editText, String preferenceKey, float defaultValue) throws JSONException {
         float savedValue = sharedPref.getFloat(preferenceKey, defaultValue);

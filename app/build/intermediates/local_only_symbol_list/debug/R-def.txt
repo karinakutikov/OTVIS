@@ -60,7 +60,6 @@ id Snow_height
 id about
 id about_box
 id about_btn
-id about_img
 id about_title
 id addNewUserButton
 id back_to_home_btn

@@ -3218,7 +3218,6 @@ id TOP_START
 id about
 id about_box
 id about_btn
-id about_img
 id about_title
 id accelerate
 id accessibility_action_clickable_span
