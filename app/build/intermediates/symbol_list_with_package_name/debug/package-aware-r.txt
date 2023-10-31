@@ -3107,6 +3107,7 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_search_black_24
+drawable lim_geomatics_logo
 drawable location_icon
 drawable logout_btn
 drawable logs_icon
@@ -3422,6 +3423,7 @@ id fixed
 id flip
 id floating
 id forever
+id fragment_about_container
 id fragment_container_view_tag
 id fragment_database_container
 id fragment_logs_container

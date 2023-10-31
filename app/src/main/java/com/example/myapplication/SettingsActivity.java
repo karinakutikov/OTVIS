@@ -71,6 +71,7 @@ public class SettingsActivity extends AppCompatActivity {
     // Initialize fragments in the layout
     private void initializeFragments(Bundle savedInstanceState) {
         aboutFragment = new AboutFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_about_container, aboutFragment).commit();
     }
 
     private void loadValueToEditText(EditText editText, String preferenceKey, float defaultValue) throws JSONException {

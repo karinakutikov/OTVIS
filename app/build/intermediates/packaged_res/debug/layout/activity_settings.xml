@@ -7,6 +7,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/primary"
     tools:context=".SettingsActivity">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -21,11 +22,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Setting"
             android:layout_centerInParent="true"
+            android:text="Setting"
             android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="18sp"/>
+            android:textSize="18sp"
+            android:textStyle="bold" />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -36,12 +37,19 @@
             android:background="@color/third"/>
     </RelativeLayout>
 
+    <FrameLayout
+        android:id="@+id/fragment_about_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </FrameLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
     </RelativeLayout>
-    
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

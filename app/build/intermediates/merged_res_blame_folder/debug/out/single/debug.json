@@ -80,6 +80,10 @@
         "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\layout\\activity_settings.xml"
     },
     {
+        "merged": "com.example.myapplication.app-merged_res-71:/layout_fragment_about.xml.flat",
+        "source": "com.example.myapplication.app-main-73:/layout/fragment_about.xml"
+    },
+    {
         "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\mipmap-mdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\mipmap-mdpi\\ic_launcher.png"
     },
@@ -164,6 +168,10 @@
         "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\drawable\\camera_fps_icon.png"
     },
     {
+        "merged": "com.example.myapplication.app-merged_res-71:/drawable-v24_lim_geomatics_logo.png.flat",
+        "source": "com.example.myapplication.app-main-73:/drawable-v24/lim_geomatics_logo.png"
+    },
+    {
         "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\xml_backup_rules.xml.flat",
         "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\xml\\backup_rules.xml"
     },
@@ -242,10 +250,6 @@
     {
         "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\drawable_gps_off.png.flat",
         "source": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-73:\\drawable\\gps_off.png"
-    },
-    {
-        "merged": "com.example.myapplication.app-merged_res-71:/layout_activity_settings.xml.flat",
-        "source": "com.example.myapplication.app-main-73:/layout/activity_settings.xml"
     },
     {
         "merged": "C:\\Users\\KarinaKutikov\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-71:\\mipmap-xhdpi_ic_launcher_foreground.png.flat",

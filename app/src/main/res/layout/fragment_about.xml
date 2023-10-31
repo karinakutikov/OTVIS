@@ -23,19 +23,20 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
             app:layout_constraintWidth_percent="0.8" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/about_box"
-            android:layout_width="375dp"
-            android:layout_height="385dp"
+            android:layout_width="360dp"
+            android:layout_height="191dp"
             android:layout_gravity="bottom"
-            android:layout_marginBottom="288dp"
+            android:layout_marginBottom="4dp"
             android:background="@drawable/round_back_white10_20"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/helperView"
-            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintHorizontal_bias="0.516"
             app:layout_constraintStart_toStartOf="@+id/helperView"
             app:layout_constraintWidth_percent="0.8">
 
@@ -53,13 +54,22 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
+            <ImageView
+                android:id="@+id/lim_geomatics_logo_img"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/lim_geomatics_logo"
+                tools:layout_editor_absoluteX="145dp"
+                tools:layout_editor_absoluteY="35dp" />
+
             <ScrollView
                 android:id="@+id/scroll_view_about"
-                android:layout_width="match_parent"
-                android:layout_height="230dp"
+                android:layout_width="310dp"
+                android:layout_height="66dp"
+                android:layout_marginTop="80dp"
                 android:visibility="visible"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/about_title">
 
@@ -67,10 +77,13 @@
                     android:id="@+id/about"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:minHeight="100dp"
-                    android:scrollbars="vertical"
+                    android:gravity="center"
+                    android:minHeight="30dp"
+                    android:text="Copyright 2023 - Lim Geomatics Inc. \n Version 1.12.16.0 - LIMGEOMATICS USE ONLY"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="15sp" />
+
+
             </ScrollView>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
