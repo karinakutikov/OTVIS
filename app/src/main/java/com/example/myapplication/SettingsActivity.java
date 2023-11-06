@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
@@ -18,7 +20,7 @@ public class SettingsActivity extends AppCompatActivity {
     private SharedPreferences sharedPref;
     private SharedPreferences.Editor editor;
     private JSONObject configValues = new JSONObject();
-    private AboutFragment aboutFragment;
+    private AboutActivity aboutFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +47,6 @@ public class SettingsActivity extends AppCompatActivity {
         sharedPref = getSharedPreferences("mySettings", MODE_PRIVATE);
         editor = sharedPref.edit();
 
-        initializeFragments(savedInstanceState);
         setupClickListener();
 
         loadConfig();
@@ -54,25 +55,18 @@ public class SettingsActivity extends AppCompatActivity {
 
     private void setupClickListener() {
         // Handle the about button
-        Button aboutBtn = findViewById(R.id.about_btn);
+        Button aboutBtn = (Button) findViewById(R.id.about_btn);
         aboutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (aboutFragment.aboutBox.getVisibility() == View.GONE) {
-                    aboutFragment.aboutBox.setVisibility(View.VISIBLE);
-                }
-                else {
-                    aboutFragment.aboutBox.setVisibility(View.GONE);
-                }
+
+
+                Intent intent = new Intent(SettingsActivity.this, AboutActivity.class);
+                startActivity(intent);
             }
         });
     }
 
-    // Initialize fragments in the layout
-    private void initializeFragments(Bundle savedInstanceState) {
-        aboutFragment = new AboutFragment();
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_about_container, aboutFragment).commit();
-    }
 
     private void loadValueToEditText(EditText editText, String preferenceKey, float defaultValue) throws JSONException {
         float savedValue = sharedPref.getFloat(preferenceKey, defaultValue);

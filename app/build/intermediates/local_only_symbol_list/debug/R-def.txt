@@ -59,7 +59,6 @@ drawable waiting_time_icon
 drawable walking_dist_icon
 id Snow_height
 id about
-id about_box
 id about_btn
 id about_title
 id addNewUserButton
@@ -77,7 +76,6 @@ id delete_btn
 id destination_layout
 id dist_img
 id export_database_btn
-id fragment_about_container
 id fragment_database_container
 id fragment_logs_container
 id fragment_map_container
@@ -89,6 +87,7 @@ id headings
 id helperView
 id home
 id latitude_input
+id lim_geomatics_logo_img
 id location_btn
 id logs_btn
 id logs_title
@@ -126,9 +125,9 @@ id waiting_time
 id waiting_time_img
 id walking_distance
 id walking_distance_img
+layout activity_about
 layout activity_main
 layout activity_settings
-layout fragment_about
 layout fragment_database
 layout fragment_logs
 layout fragment_map
