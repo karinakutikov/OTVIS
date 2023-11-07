@@ -3297,6 +3297,7 @@ int id autoComplete 0x7f09005e
 int id autoCompleteToEnd 0x7f09005f
 int id autoCompleteToStart 0x7f090060
 int id back_to_home_btn 0x7f090061
+int id back_to_settings_btn 0x7f090251
 int id barrier 0x7f090062
 int id baseline 0x7f090063
 int id beginOnFirstDraw 0x7f090064
@@ -3367,6 +3368,7 @@ int id default_activity_button 0x7f0900a4
 int id delete_btn 0x7f0900a5
 int id deltaRelative 0x7f0900a6
 int id dependency_ordering 0x7f0900a7
+int id description 0x7f090250
 int id design_bottom_sheet 0x7f0900a8
 int id design_menu_item_action_area 0x7f0900a9
 int id design_menu_item_action_area_stub 0x7f0900aa

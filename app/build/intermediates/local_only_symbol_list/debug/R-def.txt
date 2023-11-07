@@ -63,6 +63,7 @@ id about_btn
 id about_title
 id addNewUserButton
 id back_to_home_btn
+id back_to_settings_btn
 id cache_map_btn
 id camera_fps
 id camera_fps_img
@@ -73,6 +74,7 @@ id database_fragment
 id database_headings
 id database_title
 id delete_btn
+id description
 id destination_layout
 id dist_img
 id export_database_btn

@@ -3298,6 +3298,7 @@ id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
 id back_to_home_btn
+id back_to_settings_btn
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -3368,6 +3369,7 @@ id default_activity_button
 id delete_btn
 id deltaRelative
 id dependency_ordering
+id description
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
