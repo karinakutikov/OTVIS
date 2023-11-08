@@ -74,7 +74,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="Description of app:"
+            android:text="Op Tracker Vision (OTVIS) developed by Lim Geomatics Inc. is an AI solution for detecting, geolocating, and classifying trees. OTVIS uses two main hardware components: Stereo Camera and NVIDIA Jetson. The current Android app is used as an interface to communicate with the main OTVIS pipeline running on the Jetson. All AI processing is done on the Jetson, and then results are transmitted to the Android app to visualize the collected tree information."
             android:textColor="@color/white"
             android:textSize="20sp"
             tools:layout_editor_absoluteX="0dp"
@@ -82,53 +82,27 @@
 
         <ScrollView
             android:id="@+id/scroll_view_about"
-            android:layout_width="358dp"
-            android:layout_height="41dp"
+            android:layout_width="362dp"
+            android:layout_height="62dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.49"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintHorizontal_bias="0.489"
+            app:layout_constraintStart_toStartOf="parent">
 
 
             <TextView
                 android:id="@+id/about"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Copyright 2023 - Lim Geomatics Inc. \n Version 1.12.16.0 - LIMGEOMATICS USE ONLY"
+                android:text="OTVIS \n   Copyright 2023 - Lim Geomatics Inc. \n Version 1.2 - LIMGEOMATICS USE ONLY"
                 android:textColor="@color/white"
-                android:textSize="15sp"/>
+                android:textSize="15sp" />
 
 
         </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-    <!--        <TextView-->
-    <!--            android:id="@+id/database_title"-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:text="Database"-->
-    <!--            android:layout_centerInParent="true"-->
-    <!--            android:textColor="@color/RED"-->
-    <!--            android:textStyle="bold"-->
-    <!--            android:textSize="16sp"-->
-    <!--            android:gravity="center_horizontal"/>-->
-    <!--        <ScrollView-->
-    <!--            android:id="@+id/scroll_view_database"-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:textColor="@color/white">-->
-    <!--            <TextView-->
-    <!--                android:id="@+id/database_logs"-->
-    <!--                android:layout_width="match_parent"-->
-    <!--                android:layout_height="wrap_content"-->
-    <!--                android:textColor="@color/white"-->
-    <!--                android:minHeight="100dp"-->
-    <!--                android:scrollbars="vertical"-->
-    <!--                android:textSize="16sp" />-->
-    <!--        </ScrollView>-->
 
 
 </FrameLayout>
