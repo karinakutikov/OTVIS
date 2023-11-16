@@ -13,7 +13,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:text="Add New Tree"
         android:textAllCaps="false"
-        android:visibility="gone"/>
+        android:visibility="visible"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -24,7 +24,7 @@
             android:id="@+id/helperView"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:visibility="invisible"
+            android:visibility="visible"
 
             app:layout_constraintWidth="match_parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -40,7 +40,7 @@
             app:layout_constraintEnd_toEndOf="@+id/helperView"
             app:layout_constraintTop_toTopOf="parent"
             android:id="@+id/database_box"
-            android:visibility="gone">
+            android:visibility="visible">
             <TextView
                 android:id="@+id/database_title"
                 android:layout_width="wrap_content"
@@ -111,13 +111,15 @@
                 android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_marginTop="0dp"
                 android:layout_marginBottom="5dp"
                 android:textColor="@color/white"
-                app:layout_constraintTop_toBottomOf="@+id/database_headings"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintTop_toBottomOf="@+id/database_headings"
+                app:layout_constraintVertical_bias="0.555" />
+
             <Button
                 android:id="@+id/clear_cache_btn"
                 android:layout_width="wrap_content"

@@ -74,7 +74,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="Op Tracker Vision (OTVIS) developed by Lim Geomatics Inc. is an AI solution for detecting, geolocating, and classifying trees. OTVIS uses two main hardware components: Stereo Camera and NVIDIA Jetson. The current Android app is used as an interface to communicate with the main OTVIS pipeline running on the Jetson. All AI processing is done on the Jetson, and then results are transmitted to the Android app to visualize the collected tree information."
+            android:text="Op Tracker Vision (OTVIS), developed by Lim Geomatics Inc., is an AI solution for detecting, geolocating, and classifying trees. The current Android app is used as an interface to communicate with a camera and a computing board that detect trees using AI. The results are transmitted to this Android app to visualize the collected tree information."
             android:textColor="@color/white"
             android:textSize="20sp"
             tools:layout_editor_absoluteX="0dp"

@@ -23,9 +23,17 @@ public class TreeListAdapter extends RecyclerView.Adapter<TreeListAdapter.MyView
     }
 
     public void setTreeList(List<Tree> treeList) {
+        Tree firstTree = new Tree(); // create a new tree object
+        treeList.add(firstTree); // ad it to the list
+        firstTree.idNum = "1"; // modify the idNum field of the tree
+        firstTree.latitudeNum = "45.3528"; // modify the latitudeNum field of the tree
+        firstTree.longitudeNum = "-75.7885"; // modify the longitudeNum field of the tree
+        firstTree.diameterNum = "10"; // modify the diameterNum field of the tree
+        firstTree.speciesInfo = "Maple"; // modify the speciesInfo field of the tree
         this.treeList = treeList;
         notifyDataSetChanged();
     }
+
 
     @NonNull
     @Override
@@ -48,7 +56,7 @@ public class TreeListAdapter extends RecyclerView.Adapter<TreeListAdapter.MyView
         return  this.treeList.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
+    public static class MyViewHolder extends RecyclerView.ViewHolder{
         TextView tvIdNum;
         TextView tvLatitude;
         TextView tvLongitude;

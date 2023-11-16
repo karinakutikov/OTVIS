@@ -9,6 +9,8 @@ import android.content.Intent;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -23,6 +25,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements MapFragment.OnMapFragmentReadyListener{
     private final String HOST = "192.168.1.1";
@@ -39,10 +43,14 @@ public class MainActivity extends AppCompatActivity implements MapFragment.OnMap
     private SharedPreferences sharedPref;
     private String settingsJson;
 
+    //ArrayList<TreeDataModel> treeDataModels = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //RecyclerView recyclerView = findViewById(R.id.recyclerView);
 
         sharedPref = getSharedPreferences("mySettings", MODE_PRIVATE);
         settingsJson = sharedPref.getString("setting_json", "{}");
@@ -51,7 +59,26 @@ public class MainActivity extends AppCompatActivity implements MapFragment.OnMap
         initializeFragments(savedInstanceState);
         setupClickListeners();
         Log.d("configurationCreate", settingsJson);
+
+        //setUpTreeDataModels();
+
+        //TreeListAdapter adapter = new TreeListAdapter(this, treeDataModels);
+        //recyclerView.setAdapter(adapter);
+        //recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
+
+    //private void setUpTreeDataModels(){
+        //String[] treeId = getResources().getStringArray(R.array.tree_id);
+        //String[] treeLatitude = getResources().getStringArray(R.array.tree_latitude);
+        //String[] treeLongitude = getResources().getStringArray(R.array.tree_longitude);
+        //String[] treeDiameter = getResources().getStringArray(R.array.tree_diameter);
+        //String[] treeSpecies = getResources().getStringArray(R.array.tree_species);
+
+        //for (int i = 0; i<treeId.length; i++){
+            //treeDataModels.add(new TreeDataModel(treeId[i], treeLatitude[i], treeLongitude[i], treeDiameter[i], treeSpecies[i]));
+
+        //}
+    //}
 
     @Override
     protected void onResume() {
