@@ -26,18 +26,22 @@ import android.widget.Toast;
 
 
 import com.example.myapplication.db.Tree;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.model.LatLng;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
-public class DatabaseFragment extends Fragment {
+public class DatabaseFragment extends Fragment implements TreeListAdapter.OnItemClickListener {
     private static final int REQUEST_WRITE_PERMISSION = 101;
     protected ConstraintLayout databaseBox;
     protected RecyclerView recyclerView;
     protected TreeListAdapter treeListAdapter;
     private Context context;
+    private GoogleMap mMap;
     private TreeDataHandlerImpl treeDataHandler;
 
     public DatabaseFragment() {}
@@ -51,7 +55,17 @@ public class DatabaseFragment extends Fragment {
         this.context = context;
     }
 
-    
+    @Override
+    public void onButtonClick(){
+        Log.e("DatabaseFragment", "onButtonClicked");
+        moveToOfficeLocation();
+    }
+
+    private void moveToOfficeLocation(){
+        Log.e("DatabaseFragment", "moveToOfficeLocation");
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(45.3528, -75.7885)));
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -91,12 +105,18 @@ public class DatabaseFragment extends Fragment {
 
 
     protected void initRecyclerView() {
+        Log.e("DatabaseFragment", "initRecyclerView");
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
 
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(context, DividerItemDecoration.VERTICAL);
         recyclerView.addItemDecoration(dividerItemDecoration);
+
         treeListAdapter = new TreeListAdapter(context);
         recyclerView.setAdapter(treeListAdapter);
+
+        //TreeListAdapter adapter = new TreeListAdapter(context);
+        //adapter.setListener(this);
+        //recyclerView.setAdapter(adapter);
     }
 
     @Override
