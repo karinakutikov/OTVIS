@@ -12,7 +12,7 @@ import com.example.myapplication.db.Tree;
 import java.util.List;
 
 public class TreeViewModel extends AndroidViewModel {
-    AppDatabase db;
+    static AppDatabase db;
     private final LiveData<List<Tree>> treeList;
 
     public TreeViewModel(Application application) {
@@ -35,7 +35,7 @@ public class TreeViewModel extends AndroidViewModel {
         }).start();
     }
 
-    public void deleteTree(int treeID) {
+    public static void deleteTree(int treeID) {
         new Thread(new Runnable() {
             @Override
             public void run() {

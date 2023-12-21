@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
-
+import com.example.myapplication.db.AppDatabase;
+import com.example.myapplication.db.Tree;
+import com.example.myapplication.db.TreeDao;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -11,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -51,6 +54,22 @@ public class MainActivity extends AppCompatActivity implements MapFragment.OnMap
 
         sharedPref = getSharedPreferences("mySettings", MODE_PRIVATE);
         settingsJson = sharedPref.getString("setting_json", "{}");
+
+        new Thread(new Runnable() {
+            public void run() {
+                Tree newTree = new Tree();
+                newTree.uid = 400;
+                newTree.idNum = "100";
+                newTree.latitudeNum = "40";
+                newTree.longitudeNum = "80";
+                newTree.diameterNum = "10";
+                newTree.speciesInfo = "NO2";
+                AppDatabase db = Room.databaseBuilder(getApplicationContext(),
+                        AppDatabase.class, "tree_database").build();
+                TreeDao treeDao = db.treeDao();
+                treeDao.insertTree(newTree);
+            }
+        }).start();
 
         // Initialize fragments and set up click listeners
         initializeFragments(savedInstanceState);

@@ -27,13 +27,6 @@ public class TreeListAdapter extends RecyclerView.Adapter<TreeListAdapter.MyView
         this.context = context;
     }
     public void setTreeList(List<Tree> treeList) {
-        Tree firstTree = new Tree(); // create a new tree object
-        treeList.add(firstTree); // add it to the list
-        firstTree.idNum = "1"; // modify the idNum field of the tree
-        firstTree.latitudeNum = "45.3528"; // modify the latitudeNum field of the tree
-        firstTree.longitudeNum = "-75.7885"; // modify the longitudeNum field of the tree
-        firstTree.diameterNum = "10"; // modify the diameterNum field of the tree
-        firstTree.speciesInfo = "Maple"; // modify the speciesInfo field of the tree
         this.treeList = treeList;
         notifyDataSetChanged();
     }
@@ -66,6 +59,7 @@ public class TreeListAdapter extends RecyclerView.Adapter<TreeListAdapter.MyView
         TextView tvDiameterNum;
         TextView tvSpeciesInfo;
         Button goBtn;
+        Button delBtn;
 
         public MyViewHolder(View view) {
             super(view);
@@ -75,10 +69,15 @@ public class TreeListAdapter extends RecyclerView.Adapter<TreeListAdapter.MyView
             tvLongitude = view.findViewById(R.id.tvLongitude);
             tvDiameterNum = view.findViewById(R.id.tvDiameterNum);
             tvSpeciesInfo = view.findViewById(R.id.tvSpeciesInfo);
+            delBtn = view.findViewById(R.id.tvDeleteTree);
             goBtn = view.findViewById(R.id.tvLocateTree);
+            delBtn.setOnClickListener(v -> {
+                Log.e("TreeListAdapter", "delete Btn");
+                TreeViewModel.deleteTree(Integer.parseInt(tvIdNum.getText().toString()));
+            });
             goBtn.setOnClickListener(v -> {
-                Log.e("TreeListAdapter", "setOnClickListener");
-                MainActivity.getMap().moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(45.3528, -75.7885), 20));
+                Log.e("TreeListAdapter", "go Btn");
+                MainActivity.getMap().moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(45.3, -75.8), 20));
             });
         }
     }
