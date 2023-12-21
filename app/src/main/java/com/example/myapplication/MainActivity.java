@@ -42,8 +42,7 @@ public class MainActivity extends AppCompatActivity implements MapFragment.OnMap
     private InfoHandler infoHandler;
     private SharedPreferences sharedPref;
     private String settingsJson;
-
-    //ArrayList<TreeDataModel> treeDataModels = new ArrayList<>();
+    private static GoogleMap gMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,18 +58,6 @@ public class MainActivity extends AppCompatActivity implements MapFragment.OnMap
         Log.d("configurationCreate", settingsJson);
     }
 
-    //private void setUpTreeDataModels(){
-        //String[] treeId = getResources().getStringArray(R.array.tree_id);
-        //String[] treeLatitude = getResources().getStringArray(R.array.tree_latitude);
-        //String[] treeLongitude = getResources().getStringArray(R.array.tree_longitude);
-        //String[] treeDiameter = getResources().getStringArray(R.array.tree_diameter);
-        //String[] treeSpecies = getResources().getStringArray(R.array.tree_species);
-
-        //for (int i = 0; i<treeId.length; i++){
-            //treeDataModels.add(new TreeDataModel(treeId[i], treeLatitude[i], treeLongitude[i], treeDiameter[i], treeSpecies[i]));
-
-        //}
-    //}
 
     @Override
     protected void onResume() {
@@ -146,6 +133,11 @@ public class MainActivity extends AppCompatActivity implements MapFragment.OnMap
     public void onMapFragmentReady(GoogleMap mMap) {
         // The map is ready at this point. You can now initialize UIUpdater and InfoHandler.
         initializeUIComponents(mMap);
+        gMap = mMap;
+    }
+
+    public static GoogleMap getMap() {
+        return gMap;
     }
 
     private void initializeUIComponents(GoogleMap mMap) {

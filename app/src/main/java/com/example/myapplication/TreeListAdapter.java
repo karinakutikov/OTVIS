@@ -13,6 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.db.Tree;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.model.LatLng;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,16 +22,10 @@ import java.util.List;
 public class TreeListAdapter extends RecyclerView.Adapter<TreeListAdapter.MyViewHolder> {
 
     private Context context;
-    RecyclerView recyclerView;
     private List<Tree> treeList = new ArrayList<>();
     public TreeListAdapter(Context context) {
         this.context = context;
-        //setListener((new )this);
-        //TreeListAdapter adapter = new TreeListAdapter(context);
-        //setListener((OnItemClickListener) this);
-        //recyclerView.setAdapter(adapter);
     }
-
     public void setTreeList(List<Tree> treeList) {
         Tree firstTree = new Tree(); // create a new tree object
         treeList.add(firstTree); // add it to the list
@@ -40,24 +36,7 @@ public class TreeListAdapter extends RecyclerView.Adapter<TreeListAdapter.MyView
         firstTree.speciesInfo = "Maple"; // modify the speciesInfo field of the tree
         this.treeList = treeList;
         notifyDataSetChanged();
-
-        //TreeListAdapter adapter = new TreeListAdapter(context);
-        //adapter.setListener((OnItemClickListener) this);
-        //recyclerView.setAdapter(adapter);
     }
-    //public void setListener(OnItemClickListener listener) {
-
-        //TreeListAdapter.listener = listener;
-    //}
-//    public interface OnItemClickListener{
-//        void onButtonClick();
-//    }
-    //OnItemClickListener listener = new OnItemClickListener() {
-      //  @Override
-        //public void onButtonClick() {
-
-        //}
-    //};
 
     @NonNull
     @Override
@@ -97,28 +76,10 @@ public class TreeListAdapter extends RecyclerView.Adapter<TreeListAdapter.MyView
             tvDiameterNum = view.findViewById(R.id.tvDiameterNum);
             tvSpeciesInfo = view.findViewById(R.id.tvSpeciesInfo);
             goBtn = view.findViewById(R.id.tvLocateTree);
-
-//            MapFragment mapListener = new MapFragment();
-//            Log.e("initialization", "log click");
-//
-//            goBtn.setOnClickListener(v -> {
-//                Log.e("TreeListAdapter", "setOnClickListener");
-//                if (mapListener != null){
-//                    mapListener.moveToCurrentLocation();
-//                }else{
-//                    Log.e("TreeListAdapter", "Listener is null");
-//                }
-
-                //int position = getAdapterPosition();
-                //Log.e("MyViewHolder", "Position: " + position);
-                //if (position != RecyclerView.NO_POSITION && listener != null) {
-
-                    //Log.e("TreeListAdapter", "!=null");
-                //}else{
-                    //Log.e("TreeListAdapter", "=null");
-                //
-            //});
-
+            goBtn.setOnClickListener(v -> {
+                Log.e("TreeListAdapter", "setOnClickListener");
+                MainActivity.getMap().moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(45.3528, -75.7885), 20));
+            });
         }
     }
 }
