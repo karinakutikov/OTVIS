@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -20,7 +21,6 @@ public class TreeListAdapter extends RecyclerView.Adapter<TreeListAdapter.MyView
 
     private Context context;
     RecyclerView recyclerView;
-    private static OnItemClickListener listener;
     private List<Tree> treeList = new ArrayList<>();
     public TreeListAdapter(Context context) {
         this.context = context;
@@ -45,14 +45,19 @@ public class TreeListAdapter extends RecyclerView.Adapter<TreeListAdapter.MyView
         //adapter.setListener((OnItemClickListener) this);
         //recyclerView.setAdapter(adapter);
     }
-    public void setListener(OnItemClickListener listener) {
+    //public void setListener(OnItemClickListener listener) {
 
-        TreeListAdapter.listener = listener;
-    }
-    public interface OnItemClickListener{
-        void onButtonClick();
-        
-    }
+        //TreeListAdapter.listener = listener;
+    //}
+//    public interface OnItemClickListener{
+//        void onButtonClick();
+//    }
+    //OnItemClickListener listener = new OnItemClickListener() {
+      //  @Override
+        //public void onButtonClick() {
+
+        //}
+    //};
 
     @NonNull
     @Override
@@ -93,13 +98,16 @@ public class TreeListAdapter extends RecyclerView.Adapter<TreeListAdapter.MyView
             tvSpeciesInfo = view.findViewById(R.id.tvSpeciesInfo);
             goBtn = view.findViewById(R.id.tvLocateTree);
 
-            goBtn.setOnClickListener(v -> {
-                Log.e("TreeListAdapter", "setOnClickListener");
-                if (listener != null){
-                    listener.onButtonClick();
-                }else{
-                    Log.e("TreeListAdapter", "Listener is null");
-                }
+//            MapFragment mapListener = new MapFragment();
+//            Log.e("initialization", "log click");
+//
+//            goBtn.setOnClickListener(v -> {
+//                Log.e("TreeListAdapter", "setOnClickListener");
+//                if (mapListener != null){
+//                    mapListener.moveToCurrentLocation();
+//                }else{
+//                    Log.e("TreeListAdapter", "Listener is null");
+//                }
 
                 //int position = getAdapterPosition();
                 //Log.e("MyViewHolder", "Position: " + position);
@@ -109,7 +117,7 @@ public class TreeListAdapter extends RecyclerView.Adapter<TreeListAdapter.MyView
                 //}else{
                     //Log.e("TreeListAdapter", "=null");
                 //
-            });
+            //});
 
         }
     }

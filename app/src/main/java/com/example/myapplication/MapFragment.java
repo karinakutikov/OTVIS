@@ -74,7 +74,9 @@ public class MapFragment extends Fragment implements OnMapReadyCallback{
             supportMapFragment.getMapAsync(this);
         }
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(requireActivity());
+    Log.e("initialization","log initialize map");
     }
+
 
 
     private void initializeUIComponents(View view) {
@@ -88,6 +90,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback{
         cacheMapButton.setOnClickListener(v -> toggleDestinationLayout());
         goButton.setOnClickListener(v -> moveToSpecifiedLocation());
         myLocBtn.setOnClickListener(v -> moveToCurrentLocation());
+    Log.e("initialization","log initialize UI");
     }
 
     private void toggleDestinationLayout() {
@@ -115,7 +118,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback{
             destinationLayout.setVisibility(View.GONE);
         }
     }
-
 
     @SuppressLint("MissingPermission")
     protected void moveToCurrentLocation(){
@@ -173,5 +175,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback{
         if (callbackListener != null) {
             callbackListener.onMapFragmentReady(mMap);
         }
+        Log.e("initialization", "log map ready");
     }
 }

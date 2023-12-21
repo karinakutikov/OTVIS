@@ -50,8 +50,6 @@ public class MainActivity extends AppCompatActivity implements MapFragment.OnMap
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //RecyclerView recyclerView = findViewById(R.id.recyclerView);
-
         sharedPref = getSharedPreferences("mySettings", MODE_PRIVATE);
         settingsJson = sharedPref.getString("setting_json", "{}");
 
@@ -59,12 +57,6 @@ public class MainActivity extends AppCompatActivity implements MapFragment.OnMap
         initializeFragments(savedInstanceState);
         setupClickListeners();
         Log.d("configurationCreate", settingsJson);
-
-        //setUpTreeDataModels();
-
-        //TreeListAdapter adapter = new TreeListAdapter(this, treeDataModels);
-        //recyclerView.setAdapter(adapter);
-        //recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
     //private void setUpTreeDataModels(){

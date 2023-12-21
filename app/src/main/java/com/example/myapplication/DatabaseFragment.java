@@ -35,7 +35,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
-public class DatabaseFragment extends Fragment implements TreeListAdapter.OnItemClickListener {
+public class DatabaseFragment extends Fragment {
     private static final int REQUEST_WRITE_PERMISSION = 101;
     protected ConstraintLayout databaseBox;
     protected RecyclerView recyclerView;
@@ -55,16 +55,7 @@ public class DatabaseFragment extends Fragment implements TreeListAdapter.OnItem
         this.context = context;
     }
 
-    @Override
-    public void onButtonClick(){
-        Log.e("DatabaseFragment", "onButtonClicked");
-        moveToOfficeLocation();
-    }
 
-    private void moveToOfficeLocation(){
-        Log.e("DatabaseFragment", "moveToOfficeLocation");
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(45.3528, -75.7885)));
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
