@@ -31,6 +31,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity implements MapFragment.OnMapFragmentReadyListener{
     private final String HOST = "192.168.1.1";
     private final int PORT = 7172;
@@ -58,7 +60,8 @@ public class MainActivity extends AppCompatActivity implements MapFragment.OnMap
         new Thread(new Runnable() {
             public void run() {
                 Tree newTree = new Tree();
-                newTree.uid = 400;
+                Random rand = new Random();
+                newTree.uid = rand.nextInt(1000);
                 newTree.idNum = "100";
                 newTree.latitudeNum = "40";
                 newTree.longitudeNum = "80";
