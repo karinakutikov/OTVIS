@@ -107,8 +107,7 @@ public class SocketConnection {
                 StringBuilder sb = new StringBuilder();
                 String line;
                 while ((line = in.readLine()) != null) {
-                    String finalLine = line;
-                    handleIncomingData(finalLine, sb);
+                    handleIncomingData(line, sb);
                 }
             } catch (IOException e) {
                 e.printStackTrace();
