@@ -40,7 +40,7 @@ public class SocketConnection {
 
     public void disconnectFromServer() throws IOException {
         sendMessageToServer("stop");
-        Log.d("MainActivity", "Attempting to disconnect... in socket connection class");
+        Log.d("MainActivity", "Attempting to disconnect... in SocketConnection");
         if (in != null) {in.close();}
         if (out != null) {out.close();}
         if (socket != null){
@@ -98,6 +98,7 @@ public class SocketConnection {
                 socket = new Socket(host, port);
                 out = new PrintWriter(socket.getOutputStream(), true);
                 in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                Log.i("RunConnectTask", String.valueOf(socket.getInputStream()));
 
                 infoHandler.updateConsole();
                 infoHandler.showToast(settingJson);
@@ -107,11 +108,12 @@ public class SocketConnection {
                 StringBuilder sb = new StringBuilder();
                 String line;
                 while ((line = in.readLine()) != null) {
+                    Log.d("RunConnectTask", line);
                     handleIncomingData(line, sb);
                 }
             } catch (IOException e) {
                 e.printStackTrace();
-            } finally {
+            } /*finally {
                 // Close the socket and any open streams
                 try {
                     if (in != null) in.close();
@@ -120,11 +122,12 @@ public class SocketConnection {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-            }
+            }*/
         }
     }
 
     public void connectToServer(String host, int port){
+        Log.d("MainActivity", "Attempting to connect... in SocketConnection");
         executor.execute(new ConnectTask(host, port));
     }
 }

@@ -30,7 +30,6 @@ public class TreeListAdapter extends RecyclerView.Adapter<TreeListAdapter.MyView
         this.treeList = treeList;
         notifyDataSetChanged();
     }
-
     @NonNull
     @Override
     public TreeListAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -49,7 +48,7 @@ public class TreeListAdapter extends RecyclerView.Adapter<TreeListAdapter.MyView
 
     @Override
     public int getItemCount() {
-        return  this.treeList.size();
+        return this.treeList.size();
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{

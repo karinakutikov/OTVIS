@@ -2,13 +2,24 @@ package com.example.myapplication.db;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.ForeignKey;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "tree")
+import java.time.LocalDateTime;
+
+@Entity(tableName = "tree",
+        foreignKeys = { @ForeignKey(
+                        entity = Survey.class, parentColumns = "sid",
+                        childColumns = "survey_id", onDelete = ForeignKey.CASCADE)},
+        indices = {@Index("survey_id")})
 public class Tree {
 
     @PrimaryKey(autoGenerate = true)
     public int uid;
+
+    @ColumnInfo(name = "survey_id")
+    public int sid;
 
     @ColumnInfo(name = "id_num")
     public String idNum;

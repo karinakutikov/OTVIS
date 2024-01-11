@@ -15,7 +15,7 @@ public interface TreeDao {
     LiveData<List<Tree>> getAllTrees();
 
     @Insert
-    void insertTree(Tree... trees);
+    void insertTree(Tree... tree);
 
     @Query("SELECT * FROM tree WHERE id_num = :id")
     Tree find(int id);
@@ -25,4 +25,7 @@ public interface TreeDao {
 
     @Query("DELETE FROM tree")
     void deleteAllTrees();
+
+    @Query("SELECT * FROM tree, survey WHERE survey_name = :surveyName")
+    List<Tree> getSurveyTrees(String surveyName);
 }

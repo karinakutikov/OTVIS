@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
 import com.example.myapplication.db.AppDatabase;
+import com.example.myapplication.db.Survey;
+import com.example.myapplication.db.SurveyDao;
 import com.example.myapplication.db.Tree;
 import com.example.myapplication.db.TreeDao;
 import com.google.android.gms.maps.GoogleMap;
@@ -10,6 +12,7 @@ import android.content.Intent;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -29,13 +32,22 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
+import java.sql.Date;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
+import java.util.HashMap;
+import java.util.List;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity implements MapFragment.OnMapFragmentReadyListener{
     private final String HOST = "192.168.1.1";
     private final int PORT = 7172;
+
+    private AppDatabase db;
 
     // UI elements
     private TextView memoryUsage, timeRemaining, hdopView;
@@ -57,8 +69,25 @@ public class MainActivity extends AppCompatActivity implements MapFragment.OnMap
         sharedPref = getSharedPreferences("mySettings", MODE_PRIVATE);
         settingsJson = sharedPref.getString("setting_json", "{}");
 
+
+        ///////////////////////////////////////////////////////////////////
+        //used for testing
+        ///////////////////////////////////////////////////////////////////
         new Thread(new Runnable() {
             public void run() {
+                db = Room.databaseBuilder(getApplicationContext(),
+                        AppDatabase.class, "tree_database").build();
+
+                Random uniqueSID = new Random();
+                Survey newSurvey = new Survey();
+                newSurvey.sid = uniqueSID.nextInt(1000);
+                newSurvey.surveyID = String.valueOf(LocalDateTime.now());
+                LocalDate date = LocalDate.now();
+                newSurvey.surveyDate = String.valueOf(date);
+                Log.d("SurveyTask", String.valueOf(newSurvey.surveyDate));
+                SurveyDao surveyDao = db.surveyDao();
+                surveyDao.insertSurvey(newSurvey);
+
                 Tree newTree = new Tree();
                 Random rand = new Random();
                 newTree.uid = rand.nextInt(1000);
@@ -67,10 +96,10 @@ public class MainActivity extends AppCompatActivity implements MapFragment.OnMap
                 newTree.longitudeNum = "80";
                 newTree.diameterNum = "10";
                 newTree.speciesInfo = "NO2";
-                AppDatabase db = Room.databaseBuilder(getApplicationContext(),
-                        AppDatabase.class, "tree_database").build();
+                newTree.sid = newSurvey.sid;
                 TreeDao treeDao = db.treeDao();
                 treeDao.insertTree(newTree);
+
             }
         }).start();
 
@@ -96,6 +125,9 @@ public class MainActivity extends AppCompatActivity implements MapFragment.OnMap
         sharedPref = getSharedPreferences("mySettings", MODE_PRIVATE);
         settingsJson = sharedPref.getString("setting_json", "{}");
         Log.d("configurationResume", settingsJson);
+
+        //Remove surveys (and trees) that are > 10 days old
+        //db.surveyDao().deleteOldSurveys();
     }
 
     // Connect to the server
@@ -107,6 +139,25 @@ public class MainActivity extends AppCompatActivity implements MapFragment.OnMap
             socketConnection.connectToServer(HOST, PORT);
             startBtn.setBackgroundResource(android.R.color.transparent);
             startBtn.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.stop_icon, 0, 0);
+
+            // Create a new survey on each new server connection;
+            new Thread(new Runnable() {
+                public void run() {
+                    Random uniqueSID = new Random();
+                    Survey newSurvey = new Survey();
+                    newSurvey.sid = uniqueSID.nextInt(1000);
+                    newSurvey.surveyID = String.valueOf(LocalDateTime.now());
+                    LocalDate date = LocalDate.now();
+                    newSurvey.surveyDate = String.valueOf(date);
+                    Log.d("SurveyTask", String.valueOf(newSurvey.surveyDate));
+                    SurveyDao surveyDao = db.surveyDao();
+                    surveyDao.insertSurvey(newSurvey);
+                    Log.d("SurveyConnectionTask", String.valueOf(newSurvey.sid));
+
+                    databaseFragment.addSurveyOption(newSurvey.surveyID);
+                }
+            }).start();
+
         } catch (Exception e) {
             Log.e("MainActivity", "Error connecting to server", e);
             Toast.makeText(MainActivity.this, "Failed to connect to server.", Toast.LENGTH_SHORT).show();

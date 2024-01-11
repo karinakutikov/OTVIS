@@ -25,6 +25,8 @@ public class TreeViewModel extends AndroidViewModel {
         return treeList;
     }
 
+    public List<Tree> getTreesFromSurvey(String surveyName) { return db.treeDao().getSurveyTrees(surveyName); }
+
     // Use a new thread to insert the tree to avoid performing database operations on the main thread
     public void insertTree(Tree tree) {
         new Thread(new Runnable() {

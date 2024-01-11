@@ -21,6 +21,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -33,6 +36,7 @@ import com.google.android.gms.maps.model.LatLng;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class DatabaseFragment extends Fragment {
@@ -40,6 +44,7 @@ public class DatabaseFragment extends Fragment {
     protected ConstraintLayout databaseBox;
     protected RecyclerView recyclerView;
     protected TreeListAdapter treeListAdapter;
+    protected ArrayAdapter<String> dbMenuAdapter;
     private Context context;
     private GoogleMap mMap;
     private TreeDataHandlerImpl treeDataHandler;
@@ -63,11 +68,21 @@ public class DatabaseFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_database, container,false);
         recyclerView = view.findViewById(R.id.recyclerView);
         databaseBox  = view.findViewById(R.id.database_box);
+        Spinner dbMenu = view.findViewById(R.id.database_menu);
         Button clearBtn = view.findViewById(R.id.clear_cache_btn);
         Button exportBtn = view.findViewById(R.id.export_database_btn);
         initRecyclerView();
 
-        // Get a ViewModelProvider and observe the LiveData.
+        SurveyViewModel surveyView = new ViewModelProvider(this).get(SurveyViewModel.class);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                dbMenuAdapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, surveyView.getSurveyNames());
+                dbMenuAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+                dbMenu.setAdapter(dbMenuAdapter);
+            }
+        }).start();
+
         TreeViewModel viewModel = new ViewModelProvider(this).get(TreeViewModel.class);
         viewModel.getTreeList().observe(getViewLifecycleOwner(), new Observer<List<Tree>>() {
             @Override
@@ -76,6 +91,26 @@ public class DatabaseFragment extends Fragment {
                 Log.d("treeMapChange", trees.toString());
             }
         });
+        dbMenu.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+            private List<Tree> treeList;
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        treeList = viewModel.getTreesFromSurvey(parent.getItemAtPosition(pos).toString());
+                    }
+                }).start();
+
+
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        // Get a ViewModelProvider and observe the LiveData.
 
         clearBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,9 +140,6 @@ public class DatabaseFragment extends Fragment {
         treeListAdapter = new TreeListAdapter(context);
         recyclerView.setAdapter(treeListAdapter);
 
-        //TreeListAdapter adapter = new TreeListAdapter(context);
-        //adapter.setListener(this);
-        //recyclerView.setAdapter(adapter);
     }
 
     @Override
@@ -153,5 +185,9 @@ public class DatabaseFragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    public void addSurveyOption(String option) {
+        dbMenuAdapter.add(option);
     }
 }
