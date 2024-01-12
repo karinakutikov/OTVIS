@@ -20,12 +20,11 @@ public interface TreeDao {
     @Query("SELECT * FROM tree WHERE id_num = :id")
     Tree find(int id);
 
+    @Query("SELECT survey_id FROM tree, survey WHERE survey_name = :name")
+    int find(String name);
     @Delete
     void deleteTree(Tree tree);
 
     @Query("DELETE FROM tree")
     void deleteAllTrees();
-
-    @Query("SELECT * FROM tree, survey WHERE survey_name = :surveyName")
-    List<Tree> getSurveyTrees(String surveyName);
 }

@@ -246,57 +246,23 @@ public final class TreeDao_Impl implements TreeDao {
   }
 
   @Override
-  public List<Tree> getSurveyTrees(final String surveyName) {
-    final String _sql = "SELECT * FROM tree, survey WHERE survey_name = ?";
+  public int find(final String name) {
+    final String _sql = "SELECT survey_id FROM tree, survey WHERE survey_name = ?";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
     int _argIndex = 1;
-    if (surveyName == null) {
+    if (name == null) {
       _statement.bindNull(_argIndex);
     } else {
-      _statement.bindString(_argIndex, surveyName);
+      _statement.bindString(_argIndex, name);
     }
     __db.assertNotSuspendingTransaction();
     final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
     try {
-      final int _cursorIndexOfUid = CursorUtil.getColumnIndexOrThrow(_cursor, "uid");
-      final int _cursorIndexOfSid = CursorUtil.getColumnIndexOrThrow(_cursor, "survey_id");
-      final int _cursorIndexOfIdNum = CursorUtil.getColumnIndexOrThrow(_cursor, "id_num");
-      final int _cursorIndexOfLatitudeNum = CursorUtil.getColumnIndexOrThrow(_cursor, "latitude_num");
-      final int _cursorIndexOfLongitudeNum = CursorUtil.getColumnIndexOrThrow(_cursor, "Longitude_num");
-      final int _cursorIndexOfDiameterNum = CursorUtil.getColumnIndexOrThrow(_cursor, "diameter_num");
-      final int _cursorIndexOfSpeciesInfo = CursorUtil.getColumnIndexOrThrow(_cursor, "species_info");
-      final List<Tree> _result = new ArrayList<Tree>(_cursor.getCount());
-      while(_cursor.moveToNext()) {
-        final Tree _item;
-        _item = new Tree();
-        _item.uid = _cursor.getInt(_cursorIndexOfUid);
-        _item.sid = _cursor.getInt(_cursorIndexOfSid);
-        if (_cursor.isNull(_cursorIndexOfIdNum)) {
-          _item.idNum = null;
-        } else {
-          _item.idNum = _cursor.getString(_cursorIndexOfIdNum);
-        }
-        if (_cursor.isNull(_cursorIndexOfLatitudeNum)) {
-          _item.latitudeNum = null;
-        } else {
-          _item.latitudeNum = _cursor.getString(_cursorIndexOfLatitudeNum);
-        }
-        if (_cursor.isNull(_cursorIndexOfLongitudeNum)) {
-          _item.longitudeNum = null;
-        } else {
-          _item.longitudeNum = _cursor.getString(_cursorIndexOfLongitudeNum);
-        }
-        if (_cursor.isNull(_cursorIndexOfDiameterNum)) {
-          _item.diameterNum = null;
-        } else {
-          _item.diameterNum = _cursor.getString(_cursorIndexOfDiameterNum);
-        }
-        if (_cursor.isNull(_cursorIndexOfSpeciesInfo)) {
-          _item.speciesInfo = null;
-        } else {
-          _item.speciesInfo = _cursor.getString(_cursorIndexOfSpeciesInfo);
-        }
-        _result.add(_item);
+      final int _result;
+      if(_cursor.moveToFirst()) {
+        _result = _cursor.getInt(0);
+      } else {
+        _result = 0;
       }
       return _result;
     } finally {

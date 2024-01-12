@@ -12,23 +12,51 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myapplication.db.Survey;
 import com.example.myapplication.db.Tree;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.model.LatLng;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class TreeListAdapter extends RecyclerView.Adapter<TreeListAdapter.MyViewHolder> {
 
     private Context context;
+    private List<Survey> surveyList = new ArrayList<>();
+
     private List<Tree> treeList = new ArrayList<>();
+    public int currentSurvey;
+    private List<Tree> treeListBySurvey = new ArrayList<>();
     public TreeListAdapter(Context context) {
         this.context = context;
     }
-    public void setTreeList(List<Tree> treeList) {
+
+    public List<Tree> filterList(int surveyID) {
+        return treeList.stream().filter(t -> surveyID == (t.sid)).collect(Collectors.toList());
+    }
+
+    public int findID(String surveyName) {
+        for(Survey s : surveyList) {
+            if(s.surveyID.equals(surveyName)) return s.sid;
+        }
+        return -1;
+    }
+
+    public void updateRecyclerData(String surveyName) {
+        this.treeListBySurvey = filterList(findID(surveyName));
+        notifyDataSetChanged(); //This will update recyclerview
+    }
+
+    public void setTreeList(List<Tree> treeList, String currentSurvey) {
         this.treeList = treeList;
-        notifyDataSetChanged();
+        updateRecyclerData(currentSurvey);
+    }
+
+    public void setSurveyList(List<Survey> surveyList) {
+        this.surveyList = surveyList;
     }
     @NonNull
     @Override
@@ -39,16 +67,16 @@ public class TreeListAdapter extends RecyclerView.Adapter<TreeListAdapter.MyView
 
     @Override
     public void onBindViewHolder(@NonNull TreeListAdapter.MyViewHolder holder, int position) {
-        holder.tvLatitude.setText(this.treeList.get(position).latitudeNum);
-        holder.tvLongitude.setText(this.treeList.get(position).longitudeNum);
-        holder.tvIdNum.setText(this.treeList.get(position).idNum);
-        holder.tvDiameterNum.setText(this.treeList.get(position).diameterNum);
-        holder.tvSpeciesInfo.setText(this.treeList.get(position).speciesInfo);
+        holder.tvLatitude.setText(this.treeListBySurvey.get(position).latitudeNum);
+        holder.tvLongitude.setText(this.treeListBySurvey.get(position).longitudeNum);
+        holder.tvIdNum.setText(this.treeListBySurvey.get(position).idNum);
+        holder.tvDiameterNum.setText(this.treeListBySurvey.get(position).diameterNum);
+        holder.tvSpeciesInfo.setText(this.treeListBySurvey.get(position).speciesInfo);
     }
 
     @Override
     public int getItemCount() {
-        return this.treeList.size();
+        return this.treeListBySurvey.size();
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{

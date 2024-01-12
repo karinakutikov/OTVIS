@@ -60,6 +60,8 @@ public class MainActivity extends AppCompatActivity implements MapFragment.OnMap
     private SharedPreferences sharedPref;
     private String settingsJson;
     private static GoogleMap gMap;
+    private String test;
+    private int testid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,19 +71,21 @@ public class MainActivity extends AppCompatActivity implements MapFragment.OnMap
         sharedPref = getSharedPreferences("mySettings", MODE_PRIVATE);
         settingsJson = sharedPref.getString("setting_json", "{}");
 
+        db = Room.databaseBuilder(getApplicationContext(),
+                AppDatabase.class, "tree_database").build();
+
 
         ///////////////////////////////////////////////////////////////////
         //used for testing
         ///////////////////////////////////////////////////////////////////
         new Thread(new Runnable() {
             public void run() {
-                db = Room.databaseBuilder(getApplicationContext(),
-                        AppDatabase.class, "tree_database").build();
-
-                Random uniqueSID = new Random();
                 Survey newSurvey = new Survey();
+                Random uniqueSID = new Random();
                 newSurvey.sid = uniqueSID.nextInt(1000);
+                testid = newSurvey.sid;
                 newSurvey.surveyID = String.valueOf(LocalDateTime.now());
+                test = newSurvey.surveyID;
                 LocalDate date = LocalDate.now();
                 newSurvey.surveyDate = String.valueOf(date);
                 Log.d("SurveyTask", String.valueOf(newSurvey.surveyDate));
@@ -105,6 +109,7 @@ public class MainActivity extends AppCompatActivity implements MapFragment.OnMap
 
         // Initialize fragments and set up click listeners
         initializeFragments(savedInstanceState);
+        databaseFragment.surveyView = new ViewModelProvider(this).get(SurveyViewModel.class);
         setupClickListeners();
         Log.d("configurationCreate", settingsJson);
     }
@@ -139,24 +144,6 @@ public class MainActivity extends AppCompatActivity implements MapFragment.OnMap
             socketConnection.connectToServer(HOST, PORT);
             startBtn.setBackgroundResource(android.R.color.transparent);
             startBtn.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.stop_icon, 0, 0);
-
-            // Create a new survey on each new server connection;
-            new Thread(new Runnable() {
-                public void run() {
-                    Random uniqueSID = new Random();
-                    Survey newSurvey = new Survey();
-                    newSurvey.sid = uniqueSID.nextInt(1000);
-                    newSurvey.surveyID = String.valueOf(LocalDateTime.now());
-                    LocalDate date = LocalDate.now();
-                    newSurvey.surveyDate = String.valueOf(date);
-                    Log.d("SurveyTask", String.valueOf(newSurvey.surveyDate));
-                    SurveyDao surveyDao = db.surveyDao();
-                    surveyDao.insertSurvey(newSurvey);
-                    Log.d("SurveyConnectionTask", String.valueOf(newSurvey.sid));
-
-                    databaseFragment.addSurveyOption(newSurvey.surveyID);
-                }
-            }).start();
 
         } catch (Exception e) {
             Log.e("MainActivity", "Error connecting to server", e);
@@ -245,6 +232,45 @@ public class MainActivity extends AppCompatActivity implements MapFragment.OnMap
                 // Connect to the server
                 if (startBtn.getText().equals("Start")){
                     connectToServer();
+                    // Create a new survey on each new server connection;
+                    new Thread(new Runnable() {
+                        public void run() {
+                            Survey newSurvey = new Survey();
+                            Random uniqueSID = new Random();
+                            newSurvey.sid = uniqueSID.nextInt(1000);
+                            newSurvey.surveyID = String.valueOf(LocalDateTime.now());
+                            LocalDate date = LocalDate.now();
+                            newSurvey.surveyDate = String.valueOf(date);
+                            Log.d("SurveyTask", String.valueOf(newSurvey.surveyDate));
+                            SurveyDao surveyDao = db.surveyDao();
+                            surveyDao.insertSurvey(newSurvey);
+                            Log.d("SurveyConnectionTask", String.valueOf(newSurvey.sid));
+
+                            Tree newTree = new Tree();
+                            Random uniqueID = new Random();
+                            newTree.uid = uniqueID.nextInt(1000);
+                            newTree.idNum = "200";
+                            newTree.latitudeNum = "40";
+                            newTree.longitudeNum = "80";
+                            newTree.diameterNum = "10";
+                            newTree.speciesInfo = "NO2";
+                            newTree.sid = newSurvey.sid;
+                            Log.d("TreeIDUnique", String.valueOf(newTree.sid));
+                            TreeDao treeDao = db.treeDao();
+                            treeDao.insertTree(newTree);
+                            Log.d("SurveyConnectionTask", newTree.toString());
+
+                            Tree newTree2 = new Tree();
+                            newTree2.uid = uniqueID.nextInt();
+                            newTree2.idNum = "1";
+                            newTree2.latitudeNum = "50";
+                            newTree2.longitudeNum = "500";
+                            newTree2.speciesInfo = "M-4";
+                            Log.d("TestUpdate", test);
+                            newTree2.sid = testid;
+                            treeDao.insertTree(newTree2);
+                        }
+                    }).start();
                 } else {
                     disconnectToServer();
                     Log.d("MainActivity", "setupClickListeners");

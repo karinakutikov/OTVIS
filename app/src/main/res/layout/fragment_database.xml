@@ -39,23 +39,31 @@
             android:layout_width="0dp"
             android:layout_height="300dp"
             android:background="@drawable/console_border_database"
+            android:isScrollContainer="true"
+            android:scrollIndicators="top|bottom"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
             android:visibility="visible"
             app:layout_constraintEnd_toEndOf="@+id/helperView"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/helperView"
             app:layout_constraintTop_toTopOf="parent">
 
-            <Spinner
-                android:id="@+id/database_menu"
-                android:layout_width="221dp"
-                android:layout_height="24dp"
-                android:spinnerMode="dropdown"
-                app:layout_constraintBottom_toBottomOf="parent"
+
+            <TextView
+                android:id="@+id/database_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="5dp"
+                android:gravity="center_horizontal"
+                android:text="Databases"
+                android:textColor="@color/RED"
+                android:textSize="16sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.003" />
-
+                app:layout_constraintVertical_bias="0.181" />
 
             <LinearLayout
                 android:id="@+id/database_headings"
@@ -64,7 +72,7 @@
                 android:orientation="horizontal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.428"
+                app:layout_constraintHorizontal_bias="0.357"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/database_menu"
                 app:layout_constraintVertical_bias="0.0">
@@ -109,15 +117,6 @@
                     app:autoSizeMaxTextSize="90sp"
                     app:autoSizeMinTextSize="30sp" />
 
-                <TextView
-                    android:layout_width="80dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="05dp"
-                    android:text="Species"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    app:autoSizeMaxTextSize="90sp"
-                    app:autoSizeMinTextSize="30sp" />
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
@@ -151,6 +150,35 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/clear_cache_btn" />
+
+            <Spinner
+                android:id="@+id/database_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:dropDownVerticalOffset="24dp"
+                android:spinnerMode="dropdown"
+                app:layout_constraintBottom_toBottomOf="@+id/database_headings"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.699"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/database_title" />
+
+            <TextView
+                android:id="@+id/session"
+                android:layout_width="62dp"
+                android:layout_height="21dp"
+                android:layout_margin="05dp"
+                android:layout_marginBottom="2dp"
+                android:text="Session: "
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:autoSizeMaxTextSize="90sp"
+                app:autoSizeMinTextSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/database_headings"
+                app:layout_constraintEnd_toStartOf="@+id/database_menu"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.69" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
