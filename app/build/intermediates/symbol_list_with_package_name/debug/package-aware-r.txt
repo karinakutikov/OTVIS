@@ -1511,6 +1511,7 @@ color dim_foreground_disabled_material_dark
 color dim_foreground_disabled_material_light
 color dim_foreground_material_dark
 color dim_foreground_material_light
+color drop_down
 color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
@@ -3276,7 +3277,6 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
-id addNewUserButton
 id adjust_height
 id adjust_width
 id alertTitle
@@ -3360,6 +3360,7 @@ id database
 id database_box
 id database_fragment
 id database_headings
+id database_menu
 id database_title
 id date_picker_actions
 id decelerate
@@ -3658,6 +3659,7 @@ id seekbar_value
 id select_dialog_listview
 id selected
 id selection_type
+id session
 id set_default_button
 id setting
 id sharedValueSet

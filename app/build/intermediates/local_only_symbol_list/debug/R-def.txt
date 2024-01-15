@@ -8,6 +8,7 @@ color black
 color colorBlue
 color colorGreen
 color colorRed
+color drop_down
 color ic_launcher_background
 color night_mode
 color notification
@@ -61,7 +62,6 @@ id Snow_height
 id about
 id about_btn
 id about_title
-id addNewUserButton
 id back_to_home_btn
 id back_to_settings_btn
 id cache_map_btn
@@ -72,6 +72,7 @@ id database
 id database_box
 id database_fragment
 id database_headings
+id database_menu
 id database_title
 id delete_btn
 id description
@@ -104,6 +105,7 @@ id recyclerView
 id remaining_time
 id scroll_view_about
 id scroll_view_sys
+id session
 id set_default_button
 id setting
 id snow_height

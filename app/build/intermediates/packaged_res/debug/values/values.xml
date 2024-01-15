@@ -14,6 +14,7 @@
     <color name="colorBlue">#0000FF</color>
     <color name="colorGreen">#00FF00</color>
     <color name="colorRed">#FF0000</color>
+    <color name="drop_down">#cac1a0</color>
     <color name="ic_launcher_background">#1081E0</color>
     <color name="night_mode">#6124B1</color>
     <color name="notification">#13b2c3</color>
