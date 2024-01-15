@@ -30,9 +30,7 @@ public class TreeListAdapter extends RecyclerView.Adapter<TreeListAdapter.MyView
     private List<Tree> treeList = new ArrayList<>();
     public int currentSurvey;
     private List<Tree> treeListBySurvey = new ArrayList<>();
-    public TreeListAdapter(Context context) {
-        this.context = context;
-    }
+    public TreeListAdapter(Context context) { this.context = context; }
 
     public List<Tree> filterList(int surveyID) {
         return treeList.stream().filter(t -> surveyID == (t.sid)).collect(Collectors.toList());

@@ -1,7 +1,6 @@
 package com.example.myapplication.db;
 
 import android.database.Cursor;
-import androidx.lifecycle.LiveData;
 import androidx.room.EntityDeletionOrUpdateAdapter;
 import androidx.room.EntityInsertionAdapter;
 import androidx.room.RoomDatabase;
@@ -11,14 +10,12 @@ import androidx.room.util.CursorUtil;
 import androidx.room.util.DBUtil;
 import androidx.sqlite.db.SupportSQLiteStatement;
 import java.lang.Class;
-import java.lang.Exception;
 import java.lang.Override;
 import java.lang.String;
 import java.lang.SuppressWarnings;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.concurrent.Callable;
 
 @SuppressWarnings({"unchecked", "deprecation"})
 public final class TreeDao_Impl implements TreeDao {
@@ -128,65 +125,57 @@ public final class TreeDao_Impl implements TreeDao {
   }
 
   @Override
-  public LiveData<List<Tree>> getAllTrees() {
+  public List<Tree> getAllTrees() {
     final String _sql = "SELECT * FROM tree";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
-    return __db.getInvalidationTracker().createLiveData(new String[]{"tree"}, false, new Callable<List<Tree>>() {
-      @Override
-      public List<Tree> call() throws Exception {
-        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
-        try {
-          final int _cursorIndexOfUid = CursorUtil.getColumnIndexOrThrow(_cursor, "uid");
-          final int _cursorIndexOfSid = CursorUtil.getColumnIndexOrThrow(_cursor, "survey_id");
-          final int _cursorIndexOfIdNum = CursorUtil.getColumnIndexOrThrow(_cursor, "id_num");
-          final int _cursorIndexOfLatitudeNum = CursorUtil.getColumnIndexOrThrow(_cursor, "latitude_num");
-          final int _cursorIndexOfLongitudeNum = CursorUtil.getColumnIndexOrThrow(_cursor, "Longitude_num");
-          final int _cursorIndexOfDiameterNum = CursorUtil.getColumnIndexOrThrow(_cursor, "diameter_num");
-          final int _cursorIndexOfSpeciesInfo = CursorUtil.getColumnIndexOrThrow(_cursor, "species_info");
-          final List<Tree> _result = new ArrayList<Tree>(_cursor.getCount());
-          while(_cursor.moveToNext()) {
-            final Tree _item;
-            _item = new Tree();
-            _item.uid = _cursor.getInt(_cursorIndexOfUid);
-            _item.sid = _cursor.getInt(_cursorIndexOfSid);
-            if (_cursor.isNull(_cursorIndexOfIdNum)) {
-              _item.idNum = null;
-            } else {
-              _item.idNum = _cursor.getString(_cursorIndexOfIdNum);
-            }
-            if (_cursor.isNull(_cursorIndexOfLatitudeNum)) {
-              _item.latitudeNum = null;
-            } else {
-              _item.latitudeNum = _cursor.getString(_cursorIndexOfLatitudeNum);
-            }
-            if (_cursor.isNull(_cursorIndexOfLongitudeNum)) {
-              _item.longitudeNum = null;
-            } else {
-              _item.longitudeNum = _cursor.getString(_cursorIndexOfLongitudeNum);
-            }
-            if (_cursor.isNull(_cursorIndexOfDiameterNum)) {
-              _item.diameterNum = null;
-            } else {
-              _item.diameterNum = _cursor.getString(_cursorIndexOfDiameterNum);
-            }
-            if (_cursor.isNull(_cursorIndexOfSpeciesInfo)) {
-              _item.speciesInfo = null;
-            } else {
-              _item.speciesInfo = _cursor.getString(_cursorIndexOfSpeciesInfo);
-            }
-            _result.add(_item);
-          }
-          return _result;
-        } finally {
-          _cursor.close();
+    __db.assertNotSuspendingTransaction();
+    final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+    try {
+      final int _cursorIndexOfUid = CursorUtil.getColumnIndexOrThrow(_cursor, "uid");
+      final int _cursorIndexOfSid = CursorUtil.getColumnIndexOrThrow(_cursor, "survey_id");
+      final int _cursorIndexOfIdNum = CursorUtil.getColumnIndexOrThrow(_cursor, "id_num");
+      final int _cursorIndexOfLatitudeNum = CursorUtil.getColumnIndexOrThrow(_cursor, "latitude_num");
+      final int _cursorIndexOfLongitudeNum = CursorUtil.getColumnIndexOrThrow(_cursor, "Longitude_num");
+      final int _cursorIndexOfDiameterNum = CursorUtil.getColumnIndexOrThrow(_cursor, "diameter_num");
+      final int _cursorIndexOfSpeciesInfo = CursorUtil.getColumnIndexOrThrow(_cursor, "species_info");
+      final List<Tree> _result = new ArrayList<Tree>(_cursor.getCount());
+      while(_cursor.moveToNext()) {
+        final Tree _item;
+        _item = new Tree();
+        _item.uid = _cursor.getInt(_cursorIndexOfUid);
+        _item.sid = _cursor.getInt(_cursorIndexOfSid);
+        if (_cursor.isNull(_cursorIndexOfIdNum)) {
+          _item.idNum = null;
+        } else {
+          _item.idNum = _cursor.getString(_cursorIndexOfIdNum);
         }
+        if (_cursor.isNull(_cursorIndexOfLatitudeNum)) {
+          _item.latitudeNum = null;
+        } else {
+          _item.latitudeNum = _cursor.getString(_cursorIndexOfLatitudeNum);
+        }
+        if (_cursor.isNull(_cursorIndexOfLongitudeNum)) {
+          _item.longitudeNum = null;
+        } else {
+          _item.longitudeNum = _cursor.getString(_cursorIndexOfLongitudeNum);
+        }
+        if (_cursor.isNull(_cursorIndexOfDiameterNum)) {
+          _item.diameterNum = null;
+        } else {
+          _item.diameterNum = _cursor.getString(_cursorIndexOfDiameterNum);
+        }
+        if (_cursor.isNull(_cursorIndexOfSpeciesInfo)) {
+          _item.speciesInfo = null;
+        } else {
+          _item.speciesInfo = _cursor.getString(_cursorIndexOfSpeciesInfo);
+        }
+        _result.add(_item);
       }
-
-      @Override
-      protected void finalize() {
-        _statement.release();
-      }
-    });
+      return _result;
+    } finally {
+      _cursor.close();
+      _statement.release();
+    }
   }
 
   @Override

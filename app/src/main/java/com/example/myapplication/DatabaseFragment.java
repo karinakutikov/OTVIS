@@ -38,6 +38,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -45,7 +46,9 @@ public class DatabaseFragment extends Fragment {
     private static final int REQUEST_WRITE_PERMISSION = 101;
     protected ConstraintLayout databaseBox;
     protected RecyclerView recyclerView;
-    public SurveyViewModel surveyView;
+
+    private TreeViewModel treeViewModel;
+    private SurveyViewModel surveyViewModel;
     protected TreeListAdapter treeListAdapter;
     protected ArrayAdapter<String> dbMenuAdapter;
     private Context context;
@@ -63,6 +66,15 @@ public class DatabaseFragment extends Fragment {
         this.context = context;
     }
 
+    public void setViews(TreeViewModel treeViewModel, SurveyViewModel surveyViewModel) {
+        this.treeViewModel = treeViewModel;
+        this.surveyViewModel = surveyViewModel;
+    }
+
+    public SurveyViewModel getSurveyView() { return surveyViewModel; }
+
+    public TreeViewModel getTreeView() { return treeViewModel; }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -78,14 +90,17 @@ public class DatabaseFragment extends Fragment {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                dbMenuAdapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, surveyView.getSurveyNames());
+                List<String> menuOptions = surveyViewModel.getSurveyNames();
+                Collections.sort(menuOptions);
+                menuOptions.add(0, "Select a session");
+                dbMenuAdapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, menuOptions);
                 dbMenuAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
                 dbMenu.setAdapter(dbMenuAdapter);
             }
         }).start();
 
-        TreeViewModel viewModel = new ViewModelProvider(this).get(TreeViewModel.class);
-        viewModel.getTreeList().observe(getViewLifecycleOwner(), new Observer<List<Tree>>() {
+        //TreeViewModel viewModel = new ViewModelProvider(this).get(TreeViewModel.class);
+        treeViewModel.getTreeList().observe(getViewLifecycleOwner(), new Observer<List<Tree>>() {
             @Override
             public void onChanged(List<Tree> trees) {
                 treeListAdapter.setTreeList(trees, dbMenu.getSelectedItem().toString());
@@ -93,15 +108,16 @@ public class DatabaseFragment extends Fragment {
             }
         });
 
-        surveyView.getSurveyList().observe(getViewLifecycleOwner(), new Observer<List<Survey>>() {
+        surveyViewModel.getSurveyList().observe(getViewLifecycleOwner(), new Observer<List<Survey>>() {
             @Override
             public void onChanged(List<Survey> survey) {
                 treeListAdapter.setSurveyList(survey);
-                dbMenuAdapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item,
-                                survey.stream().map(s -> s.surveyID).collect(Collectors.toList()));
-                dbMenuAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
-                dbMenu.setAdapter(dbMenuAdapter);
-                dbMenuAdapter.notifyDataSetChanged();
+                dbMenuAdapter.clear();
+                List<String> newSurveyOptions = survey.stream().map(s -> s.surveyID).collect(Collectors.toList());
+                Collections.sort(newSurveyOptions);
+                newSurveyOptions.add(0, "Select a session");
+                dbMenuAdapter.addAll(newSurveyOptions);
+                dbMenu.setSelection(newSurveyOptions.size() - 1);
                 Log.d("surveyListChange", survey.toString());
             }
         });
@@ -194,9 +210,5 @@ public class DatabaseFragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-    }
-
-    public void addSurveyOption(String option) {
-        dbMenuAdapter.add(option);
     }
 }

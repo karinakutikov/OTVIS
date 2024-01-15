@@ -60,8 +60,6 @@ public class MainActivity extends AppCompatActivity implements MapFragment.OnMap
     private SharedPreferences sharedPref;
     private String settingsJson;
     private static GoogleMap gMap;
-    private String test;
-    private int testid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,12 +81,10 @@ public class MainActivity extends AppCompatActivity implements MapFragment.OnMap
                 Survey newSurvey = new Survey();
                 Random uniqueSID = new Random();
                 newSurvey.sid = uniqueSID.nextInt(1000);
-                testid = newSurvey.sid;
                 newSurvey.surveyID = String.valueOf(LocalDateTime.now());
-                test = newSurvey.surveyID;
                 LocalDate date = LocalDate.now();
                 newSurvey.surveyDate = String.valueOf(date);
-                Log.d("SurveyTask", String.valueOf(newSurvey.surveyDate));
+                Log.d("SurveyTask", newSurvey.toString());
                 SurveyDao surveyDao = db.surveyDao();
                 surveyDao.insertSurvey(newSurvey);
 
@@ -109,7 +105,6 @@ public class MainActivity extends AppCompatActivity implements MapFragment.OnMap
 
         // Initialize fragments and set up click listeners
         initializeFragments(savedInstanceState);
-        databaseFragment.surveyView = new ViewModelProvider(this).get(SurveyViewModel.class);
         setupClickListeners();
         Log.d("configurationCreate", settingsJson);
     }
@@ -132,7 +127,8 @@ public class MainActivity extends AppCompatActivity implements MapFragment.OnMap
         Log.d("configurationResume", settingsJson);
 
         //Remove surveys (and trees) that are > 10 days old
-        //db.surveyDao().deleteOldSurveys();
+        databaseFragment.getSurveyView().deleteOldSurveys();
+        updateViews();
     }
 
     // Connect to the server
@@ -186,6 +182,9 @@ public class MainActivity extends AppCompatActivity implements MapFragment.OnMap
         } else {
             databaseFragment = (DatabaseFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_database_container);
         }
+        TreeViewModel treeViewModel = new ViewModelProvider(this).get(TreeViewModel.class);
+        SurveyViewModel surveyviewModel = new ViewModelProvider(this).get(SurveyViewModel.class);
+        databaseFragment.setViews(treeViewModel, surveyviewModel);
     }
 
     // Callback when MapFragment is ready
@@ -232,23 +231,26 @@ public class MainActivity extends AppCompatActivity implements MapFragment.OnMap
                 // Connect to the server
                 if (startBtn.getText().equals("Start")){
                     connectToServer();
+                    ///////////////////////////////////////////
+                    // Dummy objects for testing
                     // Create a new survey on each new server connection;
                     new Thread(new Runnable() {
                         public void run() {
                             Survey newSurvey = new Survey();
                             Random uniqueSID = new Random();
-                            newSurvey.sid = uniqueSID.nextInt(1000);
+                            newSurvey.sid = uniqueSID.nextInt();
                             newSurvey.surveyID = String.valueOf(LocalDateTime.now());
                             LocalDate date = LocalDate.now();
                             newSurvey.surveyDate = String.valueOf(date);
-                            Log.d("SurveyTask", String.valueOf(newSurvey.surveyDate));
+                            Log.d("SurveyTask", newSurvey.toString());
                             SurveyDao surveyDao = db.surveyDao();
                             surveyDao.insertSurvey(newSurvey);
+                            Log.d("AllSurveys", surveyDao.getAllSurveys().toString());
                             Log.d("SurveyConnectionTask", String.valueOf(newSurvey.sid));
 
                             Tree newTree = new Tree();
                             Random uniqueID = new Random();
-                            newTree.uid = uniqueID.nextInt(1000);
+                            newTree.uid = uniqueID.nextInt();
                             newTree.idNum = "200";
                             newTree.latitudeNum = "40";
                             newTree.longitudeNum = "80";
@@ -266,9 +268,10 @@ public class MainActivity extends AppCompatActivity implements MapFragment.OnMap
                             newTree2.latitudeNum = "50";
                             newTree2.longitudeNum = "500";
                             newTree2.speciesInfo = "M-4";
-                            Log.d("TestUpdate", test);
-                            newTree2.sid = testid;
+                            newTree2.sid = newSurvey.sid;
                             treeDao.insertTree(newTree2);
+
+                            updateViews();
                         }
                     }).start();
                 } else {
@@ -339,5 +342,17 @@ public class MainActivity extends AppCompatActivity implements MapFragment.OnMap
         super.onDestroy();
         // Disconnect from the server if the activity is destroyed
         socketConnection.disconnectFromServerInThread();
+    }
+
+    private void updateViews() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                TreeDao treeDao = db.treeDao();
+                SurveyDao surveyDao = db.surveyDao();
+                databaseFragment.getTreeView().setTreeList(treeDao.getAllTrees());
+                databaseFragment.getSurveyView().setSurveyList(surveyDao.getAllSurveys());
+            }
+        }).start();
     }
 }

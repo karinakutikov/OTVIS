@@ -12,7 +12,7 @@ import java.util.List;
 public interface TreeDao {
 
     @Query("SELECT * FROM tree")
-    LiveData<List<Tree>> getAllTrees();
+    List<Tree> getAllTrees();
 
     @Insert
     void insertTree(Tree... tree);

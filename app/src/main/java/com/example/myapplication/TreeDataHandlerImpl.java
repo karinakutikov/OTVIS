@@ -5,6 +5,8 @@ import android.util.Log;
 import androidx.lifecycle.LiveData;
 
 import com.example.myapplication.db.Tree;
+import com.example.myapplication.db.TreeDao;
+
 import java.util.HashMap;
 import java.util.List;
 
@@ -16,7 +18,9 @@ public class TreeDataHandlerImpl implements TreeDataHandler{
         this.treeViewModel = treeViewModel;
     }
 
-    public void insertTree(Tree newTree){ treeViewModel.insertTree(newTree);}
+    public void insertTree(Tree newTree){
+        treeViewModel.insertTree(newTree);
+    }
 
     @Override
     public void deleteTree(int treeID) { treeViewModel.deleteTree(treeID);}
